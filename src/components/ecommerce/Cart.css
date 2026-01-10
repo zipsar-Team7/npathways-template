@@ -280,10 +280,15 @@
 @media (max-width: 768px) {
   .cart-sidebar {
     max-width: 100%;
+    width: 100%;
   }
 
   .cart-header {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .cart-header h2 {
+    font-size: var(--font-size-xl);
   }
 
   .cart-items {
@@ -291,11 +296,34 @@
   }
 
   .cart-footer {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
   }
 
   .item-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cart-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-image {
     width: 60px;
     height: 60px;
+  }
+
+  .item-details h4 {
+    font-size: var(--font-size-sm);
+  }
+
+  .cart-header {
+    padding: 1rem;
+  }
+
+  .cart-footer {
+    padding: 1rem;
   }
 }
