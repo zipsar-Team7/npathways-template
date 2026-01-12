@@ -102,9 +102,9 @@
   align-items: center;
   width: 100%;
   padding: var(--spacing-4) var(--spacing-4);
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #FCA5A5;
+  background: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
   border-radius: var(--radius-lg);
@@ -112,10 +112,9 @@
 }
 
 .logout-btn:hover {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.4);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #000000; 
+  color: #000000;
 }
 
 .close-sidebar-btn {
