@@ -1,18 +1,26 @@
-import LoginForm from '../../components/auth/LoginForm';
-import './Login.css';
+import LoginForm from "../../components/auth/LoginForm";
+import BackButton from "../../components/common/BackButton";
+import "./Login.css";
 
 const Login = () => {
   return (
     <div className="auth-page fade-in">
       <div className="container">
+        <BackButton label="Home" />
         <div className="auth-layout">
           <div className="auth-illustration">
-             {/* We can use an illustration or info here */}
-             <div className="illustration-content">
-               <h1>Student Portal</h1>
-               <p>Access your dashboard, manage documents, and track your applications.</p>
-               <img src="https://placehold.co/400x300/00C194/FFFFFF?text=Student+Portal" alt="Login Illustration" />
-             </div>
+            {/* We can use an illustration or info here */}
+            <div className="illustration-content">
+              <h1>Student Portal</h1>
+              <p>
+                Access your dashboard, manage documents, and track your
+                applications.
+              </p>
+              <img
+                src="https://placehold.co/400x300/00C194/FFFFFF?text=Student+Portal"
+                alt="Login Illustration"
+              />
+            </div>
           </div>
           <div className="auth-form-container">
             <LoginForm />

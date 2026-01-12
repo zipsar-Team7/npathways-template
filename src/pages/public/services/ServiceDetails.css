@@ -217,9 +217,20 @@
 @media (max-width: 1024px) {
   .service-layout-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .service-sidebar {
-    order: 2;
+    order: -1; /* Move sidebar to top on mobile */
+  }
+
+  .service-hero {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-widget {
+    padding: 1.5rem;
   }
 }
+
