@@ -1,4 +1,340 @@
-/* Home Page - Fluent Health Inspired Dark Theme */
+/* ============================================================
+   HOME PAGE - Premium Monochromatic Redesign
+   Mirroring "Travel Agency" reference with B&W aesthetic
+   ============================================================ */
+
+.home-redesign {
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Hero Section --- */
+.home-hero-premium {
+  padding: 8rem 0 12rem;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-badge-minimal {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-premium {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-title-premium span {
+  background: linear-gradient(90deg, #000, #555);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc-premium {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+.hero-actions-premium {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-visual-right {
+  position: relative;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 30px 30px 80px rgba(0,0,0,0.1);
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.stats-nugget {
+  position: absolute;
+  bottom: 40px;
+  left: -30px;
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.nugget-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.nugget-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Course Finder Widget --- */
+.course-finder-container {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.finder-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr auto;
+  gap: 2rem;
+  align-items: flex-end;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.finder-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.finder-field label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.finder-field select, .finder-field input {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.finder-submit {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 100%;
+}
+
+/* --- Highlights Section --- */
+.highlights-section {
+  padding: 12rem 0 8rem;
+}
+
+.section-header-premium {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.highlight-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+  border-color: #000;
+  transform: translateY(-10px);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-card h3 {
+  margin-bottom: 1rem;
+}
+
+.highlight-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* --- Destinations Masonry --- */
+.destinations-section {
+  padding: 8rem 0;
+  background-color: #f9f9f9;
+}
+
+.destinations-masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 1.5rem;
+}
+
+.dest-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.dest-card.large { grid-column: span 2; grid-row: span 2; }
+.dest-card.medium { grid-column: span 2; }
+
+.dest-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+  transition: transform 0.6s ease;
+}
+
+.dest-card:hover img {
+  transform: scale(1.1);
+}
+
+.dest-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
+
+.dest-overlay h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.dest-overlay a { color: #fff; font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid #fff; }
+
+/* --- Partners Slider --- */
+.partners-slider-section {
+  padding: 6rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.partners-title {
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #aaa;
+  margin-bottom: 4rem;
+}
+
+.partners-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.partner-logo {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+/* --- Journey Teaser --- */
+.journey-teaser {
+  padding: 10rem 0;
+}
+
+.teaser-box {
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teaser-text { max-width: 500px; }
+.teaser-text h2 { font-size: 3rem; margin-bottom: 1.5rem; color: #eee;}
+.teaser-text p { font-size: 1.2rem; color: #888; margin-bottom: 2.5rem; }
+
+.teaser-visual {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step-blob { font-size: 5rem; font-weight: 900; line-height: 1; }
+.step-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .hero-split { grid-template-columns: 1fr; text-align: center; }
+  .hero-desc-premium { margin-left: auto; margin-right: auto; }
+  .hero-actions-premium { justify-content: center; }
+  .hero-visual-right { margin-top: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .finder-card { grid-template-columns: 1fr 1fr; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .destinations-masonry { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .home-hero-premium { padding-bottom: 15rem; }
+  .finder-card { grid-template-columns: 1fr; bottom: -120px; }
+  .teaser-box { flex-direction: column; text-align: center; padding: 3rem 2rem; }
+  .teaser-visual { margin-top: 4rem; }
+}
 
 /* Hero Section */
 .home-hero {

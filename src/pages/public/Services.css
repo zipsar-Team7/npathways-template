@@ -1,263 +1,206 @@
-/* Services Page - Journey Flow Design */
+/* Services Overview Page - Replicating e.visa services grid in B&W */
 
 .services-page {
-  min-height: 100vh;
+  background-color: #fff;
 }
 
-/* Hero Section */
+/* Global Banner with Breadcrumbs */
 .services-hero {
-  padding: 6rem 2rem 4rem;
-  background: #F5F5F5;
+  background-color: #f9f9f9;
+  padding: 5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
 .services-hero h1 {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  color: #000000;
 }
 
-.services-hero .text-primary {
-  color: #000000;
-  border-bottom: 3px solid #000000;
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #888;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-/* Category Selector */
-.service-category-card {
-  height: 100%;
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #000;
+}
+
+/* Main Services Grid Section */
+.services-grid-section {
+  padding: 6rem 0;
+}
+
+.section-intro-center {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.mini-title {
+  display: block;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.main-section-title {
+  font-size: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 3-Column Grid */
+.services-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Service Card Style */
+.service-card-premium {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.category-link {
-  text-decoration: none;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-primary);
+.service-card-premium:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-color: #000;
 }
 
-.category-link:hover {
-  transform: translateX(5px);
-}
-
-/* Journey Timeline */
-.journey-timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 2rem 0;
-}
-
-/* Vertical connecting line */
-.journey-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #E8E8E8;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-/* Journey Step */
-.journey-step {
-  position: relative;
-  margin-bottom: 6rem;
-  display: flex;
-  align-items: flex-start;
-}
-
-.journey-step:last-child {
-  margin-bottom: 0;
-}
-
-/* Step Number Circle */
-.step-number {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #000000;
-  color: #FFFFFF;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 0.875rem;
-  z-index: 2;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Step Content */
-.step-content {
-  background: #FFFFFF;
-  border: 1px solid #E8E8E8;
-  border-radius: 1rem;
-  padding: 2rem;
-  width: 45%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.step-content:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  background: #FAFAFA;
-}
-
-/* Alternating Layout */
-.journey-step.left .step-content {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-.journey-step.right .step-content {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-/* Step Icon */
-.step-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-/* Step Title */
-.step-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 1rem;
-}
-
-/* Step Description */
-.step-description {
-  color: #444444;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-/* Features List */
-.features-list {
-  margin: 1.5rem 0;
-}
-
-.features-list h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 1rem;
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  color: #444444;
-  font-size: 0.9375rem;
-}
-
-.feature-item .checkmark {
-  color: #000000;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-/* Support Services Grid */
-.support-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.support-card {
-  text-align: center;
-  padding: 2rem;
-}
-
-.support-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Products Preview */
-.products-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.product-preview-card {
-  overflow: hidden;
-}
-
-.product-image-container {
+.service-card-image-wrap {
   width: 100%;
   height: 200px;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
   overflow: hidden;
-  background: #F5F5F5;
 }
 
-.product-image-container img {
+.service-card-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.6s ease;
 }
 
-.product-info {
-  padding: 1.5rem;
+.service-card-premium:hover .service-card-image-wrap img {
+  transform: scale(1.1);
 }
 
-.product-info h3 {
+.card-icon-float {
+  width: 60px;
+  height: 60px;
+  background: #000;
+  color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-premium h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card-premium p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.read-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #000;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+
+.read-more-btn:hover {
+  gap: 1rem;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 6rem 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.why-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.feature-box-bw {
+  background: #111;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid #222;
+}
+
+.feature-box-bw h4 {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
-  color: #000000;
 }
 
-.product-info p {
-  color: #666666;
-  margin-bottom: 1rem;
-  font-size: 0.9375rem;
+.feature-box-bw p {
+  font-size: 0.875rem;
+  color: #888;
 }
 
-/* Mobile Responsive */
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .journey-timeline::before {
-    left: 30px;
+  .services-main-grid {
+    grid-template-columns: 1fr;
   }
-
-  .journey-step {
-    flex-direction: column;
-    padding-left: 80px;
+  .split-layout {
+    grid-template-columns: 1fr;
   }
-
-  .step-number {
-    left: 30px;
-    width: 60px;
-    height: 60px;
-    font-size: 0.75rem;
-  }
-
-  .step-content {
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
   .services-hero h1 {
     font-size: 2.5rem;
-  }
-
-  .support-grid,
-  .products-preview-grid {
-    grid-template-columns: 1fr;
   }
 }

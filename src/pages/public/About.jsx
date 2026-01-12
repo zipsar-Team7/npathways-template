@@ -1,336 +1,336 @@
-import React from 'react';
-import './About.css';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./about/AboutGeneral.css";
 
 const About = () => {
-  const values = [
-    {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      title: "Transparency First",
-      description: "Clear, honest guidance at every step of your journey"
-    },
-    {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
-        </svg>
-      ),
-      title: "Student-Centric",
-      description: "Your success is our only metric"
-    },
-    {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      title: "Excellence in Service",
-      description: "World-class support from application to arrival"
-    },
-    {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      title: "Continuous Innovation",
-      description: "Evolving with technology and education trends"
-    }
-  ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const studyAbroadProcess = [
+  const leadership = [
     {
-      step: "01",
-      title: "Career Discovery & Psychometric Assessment",
-      description: "Complete our Clarity Compass™ assessment to identify your strengths, passions, and ideal career path aligned with global opportunities."
+      name: "Deepak",
+      role: "Founder & CEO",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+      link: "/about/founder",
     },
     {
-      step: "02",
-      title: "Goal Setting & Country Selection",
-      description: "Define your academic and career goals. We help you choose the right countries and universities that match your aspirations and budget."
+      name: "Sarah Johnson",
+      role: "Head of Counseling",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
+      link: "#",
     },
     {
-      step: "03",
-      title: "Profile Building & Skill Development",
-      description: "Strengthen your profile with relevant certifications, projects, and extracurriculars through our flagship programs."
+      name: "Vikram Mehta",
+      role: "Visa Strategist",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+      link: "#",
     },
     {
-      step: "04",
-      title: "University Shortlisting",
-      description: "Get personalized university recommendations from our network of 50+ partner institutions across 15+ countries."
+      name: "Elena Rossi",
+      role: "Global Partnerships",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+      link: "#",
     },
-    {
-      step: "05",
-      title: "Application Preparation",
-      description: "Receive expert guidance on crafting compelling SOPs, LORs, and other application documents that stand out."
-    },
-    {
-      step: "06",
-      title: "Test Preparation (IELTS/TOEFL/GRE/GMAT)",
-      description: "Access our test prep resources and courses to achieve competitive scores for your target universities."
-    },
-    {
-      step: "07",
-      title: "Application Submission & Tracking",
-      description: "We handle your applications professionally and keep you updated at every stage with complete transparency."
-    },
-    {
-      step: "08",
-      title: "Visa Documentation & Filing",
-      description: "End-to-end visa support with 98% success rate. We prepare all documentation and guide you through interviews."
-    },
-    {
-      step: "09",
-      title: "Pre-Departure Briefing",
-      description: "Comprehensive orientation covering travel, accommodation, banking, SIM cards, and cultural adaptation."
-    },
-    {
-      step: "10",
-      title: "Post-Arrival Support",
-      description: "Continued support after you land - from airport pickup coordination to settling in and academic success guidance."
-    }
-  ];
-
-  const differentiators = [
-    {
-      title: "Clarity Compass™ Assessments",
-      description: "Unique blend of psychometrics, EQ, and Ikigai mapping"
-    },
-    {
-      title: "Failing Forward™ Framework",
-      description: "Builds resilience & adaptability abroad"
-    },
-    {
-      title: "Elite Yet Accessible",
-      description: "Premium services tailored for Tier 2 & Tier 3 dreamers"
-    },
-    {
-      title: "Parent-Student Partnership",
-      description: "Transparent updates and family support kits"
-    },
-    {
-      title: "Kaizen Culture",
-      description: "Small daily improvements for lasting clarity"
-    },
-    {
-      title: "End-to-End Ecosystem",
-      description: "Discovery, Skills, Applications, Arrival, Parent Support"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Priya Sharma",
-      program: "MS in Computer Science",
-      university: "University of Toronto",
-      quote: "NPathways didn't just help me get admitted - they prepared me for life in Canada. The post-arrival support was invaluable!",
-      avatar: "PS"
-    },
-    {
-      name: "Rahul Verma",
-      program: "MBA",
-      university: "University of Melbourne",
-      quote: "The Clarity Compass assessment helped me discover my true potential. I'm now thriving in Australia thanks to their guidance.",
-      avatar: "RV"
-    },
-    {
-      name: "Ananya Reddy",
-      program: "Public Health",
-      university: "King's College London",
-      quote: "From visa filing to finding accommodation in London, NPathways was with me every step. Their 24/7 support is real!",
-      avatar: "AR"
-    }
-  ];
-
-  const stats = [
-    { number: "500+", label: "Students Placed" },
-    { number: "98%", label: "Visa Success Rate" },
-    { number: "50+", label: "University Partners" },
-    { number: "15+", label: "Countries Covered" },
-    { number: "24/7", label: "Support Available" },
   ];
 
   return (
-    <div className="about-page">
+    <div className="about-shared-page">
       {/* Hero Section */}
-      <section className="about-hero">
-        <div className="container">
-          <div className="about-hero-content fade-in">
-            <span className="hero-badge">
-              <span className="hero-badge-icon"></span>
-              Your Partner in Global Education
-            </span>
-            <h1 className="about-hero-title">
-              Empowering <span className="accent">Global Ambitions</span>
-            </h1>
-            <p className="about-hero-description">
-              We are more than education consultants. We are career architects, helping students build their future across borders with clarity, confidence, and continuous support.
-            </p>
+      <section
+        className="about-hero-minimal"
+        style={{ backgroundColor: "#000", color: "#fff", padding: "10rem 0" }}
+      >
+        <div className="about-container">
+          <div className="breadcrumbs" style={{ color: "#888" }}>
+            Home / About Us
           </div>
-        </div>
-      </section>
-
-      {/* Who We Are */}
-      <section className="who-we-are-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Our Story</span>
-            <h2>Who We Are</h2>
-          </div>
-          <div className="who-content">
-            <p className="lead-text">
-              <strong>NPathways Global</strong> is a premium study abroad consultancy operated by <strong>Skillinum Falcon LLP</strong>. We specialize in guiding ambitious students through every phase of their international education journey.
-            </p>
-            <p>
-              Unlike traditional consultants who focus solely on admissions, we provide end-to-end support - from career discovery and university selection to visa success and post-arrival assistance. Our scientific approach combines psychometric assessments, personalized counseling, and continuous mentorship to ensure you don't just get admitted, but thrive in your new environment.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision, Mission & Values */}
-      <section className="vision-mission-section">
-        <div className="container">
-          <div className="vision-mission-grid">
-            <div className="vision-card glass-card">
-              <div className="card-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3>Our Vision</h3>
-              <p>Making global education accessible and achievable for every aspiring student, regardless of their background or' starting point.</p>
-            </div>
-
-            <div className="mission-card glass-card">
-              <div className="card-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3>Our Mission</h3>
-              <p>Transforming dreams into actionable study abroad plans through transparent, ethical guidance and continuous support at every step.</p>
-            </div>
-          </div>
-
-          <div className="values-section">
-            <h3 className="values-title">Our Core Values</h3>
-            <div className="values-grid">
-              {values.map((value, index) => (
-                <div key={index} className="value-card glass-card fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="value-icon">{value.icon}</div>
-                  <h4>{value.title}</h4>
-                  <p>{value.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10-Step Study Abroad Process */}
-      <section className="process-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Our Process</span>
-            <h2>Your 10-Step Journey to Study Abroad Success</h2>
-            <p className="section-description">A clear, proven roadmap from discovery to departure and beyond</p>
-          </div>
-          <div className="process-timeline">
-            {studyAbroadProcess.map((item, index) => (
-              <div key={index} className="process-item fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="process-step">{item.step}</div>
-                <div className="process-content glass-card">
-                  <h4>{item.title}</h4>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="impact-stats-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Our Impact</span>
-            <h2>Success by Numbers</h2>
-          </div>
-          <div className="stats-grid-large">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-card-large glass-card fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="stat-number-large">{stat.number}</div>
-                <div className="stat-label-large">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different */}
-      <section className="drives-us-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Our Approach</span>
-            <h2>What Makes Us Different</h2>
-          </div>
-          <div className="methodology-grid">
-            {differentiators.map((item, index) => (
-              <div key={index} className="method-card glass-card fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Student Testimonials */}
-      <section className="testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Success Stories</span>
-            <h2>Hear From Our Students</h2>
-            <p className="section-description">Real stories from students who transformed their lives with NPathways</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card glass-card fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
-                <div className="testimonial-avatar">{testimonial.avatar}</div>
-                <p className="testimonial-quote">"{testimonial.quote}"</p>
-                <div className="testimonial-author">
-                  <h4>{testimonial.name}</h4>
-                  <p className="testimonial-program">{testimonial.program}</p>
-                  <p className="testimonial-university">{testimonial.university}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="about-cta-section">
-        <div className="cta-content">
-          <h2 className="cta-title">Start Your Global Journey Today</h2>
-          <p className="cta-description">
-            Join hundreds of successful students who trusted NPathways to guide them toward their international education dreams
+          <h1 style={{ color: "#fff" }}>
+            The Institute of <br /> <span>Global Pathways</span>
+          </h1>
+          <p
+            style={{
+              color: "#888",
+              maxWidth: "600px",
+              margin: "2rem auto",
+              fontSize: "1.2rem",
+            }}
+          >
+            A premium educational consultancy dedicated to transforming
+            ambitious dreams into international realities.
           </p>
-          <button className="btn-primary">
-            Book A Free Consultation
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+        </div>
+      </section>
+
+      {/* Intro Section - Split Layout */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-2">
+            <div>
+              <span className="badge">Our Identity</span>
+              <h2 style={{ fontSize: "3rem", margin: "1.5rem 0" }}>
+                Committed to Your Success
+              </h2>
+            </div>
+            <div>
+              <p
+                style={{
+                  color: "#555",
+                  fontSize: "1.2rem",
+                  lineHeight: "1.8",
+                  marginBottom: "2rem",
+                }}
+              >
+                NPathways is a premium study abroad consultancy operated by
+                Skillinum Falcon LLP. We provide end-to-end support for students
+                aiming for world-class universities, blending scientific
+                assessments with human-centric mentorship.
+              </p>
+              <Link to="/about/how-it-works" className="about-btn-premium">
+                Explore our 10-Step Journey
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Grid */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-3" style={{ textAlign: "center" }}>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                30K
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Students Guided
+              </span>
+            </div>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                100%
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Personal Advice
+              </span>
+            </div>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                18
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Years Experience
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-section-header">
+            <span className="badge">Leadership Team</span>
+            <h2>Guided by Experts</h2>
+            <p>
+              Our team consists of industry veterans who have walked the path
+              themselves.
+            </p>
+          </div>
+
+          <div
+            className="about-grid-3"
+            style={{ gridTemplateColumns: "repeat(4, 1fr)" }}
+          >
+            {leadership.map((member, i) => (
+              <div
+                key={i}
+                className="team-card"
+                style={{ textAlign: "center" }}
+              >
+                <div
+                  style={{
+                    aspectRatio: "1/1",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    marginBottom: "1.5rem",
+                    border: "1px solid #eee",
+                  }}
+                >
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      filter: "grayscale(100%)",
+                    }}
+                  />
+                </div>
+                <h4 style={{ margin: "0.5rem 0" }}>{member.name}</h4>
+                <p
+                  style={{
+                    color: "#888",
+                    fontSize: "0.9rem",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {member.role}
+                </p>
+                {member.link !== "#" && (
+                  <Link
+                    to={member.link}
+                    style={{
+                      color: "#000",
+                      fontSize: "0.8rem",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                      borderBottom: "1px solid #000",
+                    }}
+                  >
+                    View Bio
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Banner */}
+      <section
+        style={{
+          padding: "6rem 0",
+          borderTop: "1px solid #f0f0f0",
+          borderBottom: "1px solid #f0f0f0",
+        }}
+      >
+        <div className="about-container">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              opacity: 0.5,
+              filter: "grayscale(100%)",
+            }}
+          >
+            {/* Logo placeholders - replicating the grayscale carousel */}
+            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              UNIVERSITY PARTNER
+            </span>
+            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              GLOBAL ACCREDITED
+            </span>
+            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              EDUCATION FIRST
+            </span>
+            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              CAREER HUB
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-2">
+            <div
+              style={{
+                backgroundColor: "#000",
+                borderRadius: "20px",
+                overflow: "hidden",
+                color: "#fff",
+              }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+                alt="Philosophy"
+                style={{
+                  width: "100%",
+                  height: "300px",
+                  objectFit: "cover",
+                  filter: "grayscale(100%) brightness(0.7)",
+                }}
+              />
+              <div style={{ padding: "3rem" }}>
+                <h3>Mission First</h3>
+                <p style={{ color: "#888", marginTop: "1rem" }}>
+                  We measure our success by the success of our students, not by
+                  university commissions.
+                </p>
+              </div>
+            </div>
+            <div
+              style={{
+                border: "1px solid #f0f0f0",
+                borderRadius: "20px",
+                padding: "3rem",
+              }}
+            >
+              <span
+                className="badge"
+                style={{ backgroundColor: "#f0f0f0", color: "#000" }}
+              >
+                Transparency
+              </span>
+              <h3 style={{ marginTop: "2rem" }}>No Hidden Agendas</h3>
+              <p
+                style={{ color: "#555", marginTop: "1rem", lineHeight: "1.8" }}
+              >
+                Our counseling is data-driven and objective. We use our Clarity
+                Compass™ to ensure your chosen course aligns with reality, not
+                just dreams.
+              </p>
+              <ul style={{ padding: 0, listStyle: "none", marginTop: "2rem" }}>
+                <li style={{ marginBottom: "1rem" }}>✓ Neutral Advisory</li>
+                <li style={{ marginBottom: "1rem" }}>
+                  ✓ Ethics-Led Documentation
+                </li>
+                <li style={{ marginBottom: "1rem" }}>
+                  ✓ Post-Arrival Integrity
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>

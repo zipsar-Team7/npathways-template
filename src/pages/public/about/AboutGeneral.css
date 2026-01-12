@@ -1,0 +1,127 @@
+/* ============================================================
+   ABOUT SECTION SHARED STYLES (Monochromatic B&W)
+   Replicating premium institute aesthetic
+   ============================================================ */
+
+:root {
+  --about-bg-primary: #ffffff;
+  --about-bg-secondary: #f9f9f9;
+  --about-bg-dark: #121212;
+  --about-text-primary: #1a1a1a;
+  --about-text-secondary: #555555;
+  --about-accent: #000000;
+  --about-border: #e0e0e0;
+  --about-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --about-container-width: 1200px;
+}
+
+.about-shared-page {
+  background-color: var(--about-bg-primary);
+  color: var(--about-text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.about-container {
+  max-width: var(--about-container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Hero Section --- */
+.about-hero-minimal {
+  background-color: var(--about-bg-secondary);
+  padding: 6rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--about-border);
+}
+
+.about-hero-minimal .breadcrumbs {
+  font-size: 0.9rem;
+  color: var(--about-text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-hero-minimal h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--about-text-primary);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* --- Section Headers --- */
+.about-section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.about-section-header .badge {
+  display: inline-block;
+  background: var(--about-bg-dark);
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.about-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-section-header p {
+  color: var(--about-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- Grid Utilities --- */
+.about-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.about-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- Buttons --- */
+.about-btn-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--about-bg-dark);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--about-bg-dark);
+}
+
+.about-btn-premium:hover {
+  background-color: transparent;
+  color: var(--about-bg-dark);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .about-grid-3, .about-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

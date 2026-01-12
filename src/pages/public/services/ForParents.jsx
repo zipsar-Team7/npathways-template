@@ -1,179 +1,143 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { supportServices } from '../../../data/services';
 import Button from '../../../components/common/Button';
-import Card from '../../../components/common/Card';
-import { CommonDataSection, CatalogueItem } from '../../../components/services/ServicesCommon';
-import './ForParents.css';
+import './ServiceDetails.css';
 
 const ForParents = () => {
-  const parentalResources = [
-    {
-      type: "Article",
-      title: "The 21st Century Career Landscape",
-      description: "Understanding shifting industry requirements and the skills your child actually needs."
-    },
-    {
-      type: "Video",
-      title: "The NPathways Journey Explained",
-      description: "A 5-minute guide for parents on how we manage readiness and transitions."
-    },
-    {
-      type: "Checklist",
-      title: "Readiness Milestones",
-      description: "A year-by-year checklist for parents to track student growth and clarity."
-    }
-  ];
+  const service = supportServices.find(s => s.id === 'for-parents');
+  const location = useLocation();
+  const [openFaq, setOpenFaq] = useState(null);
+
+  if (!service) return null;
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
-    <div className="services-page for-parents fade-in">
-      {/* Hero Section */}
-      <section className="section services-hero">
-        <div className="container">
-          <div className="grid grid-2 items-center">
-            <div className="hero-content">
-              <h1 className="mb-6">For Parents</h1>
-              <p className="text-xl text-gray-700 mb-8">
-                “I understand the system, I can see progress, and my child is safe.”
-              </p>
-              <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
-                Book a Parent Guidance Session
-              </Button>
-            </div>
-          </div>
+    <div className="service-detail-page fade-in">
+      {/* Hero / Breadcrumb */}
+      <section className="service-hero bg-gray">
+        <div className="container text-center">
+          <nav className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <Link to="/services">Services</Link>
+            <span>/</span>
+            <span className="text-black font-medium">{service.name}</span>
+          </nav>
+          <h1>{service.name}</h1>
         </div>
       </section>
 
-      {/* Parent Role Section */}
-      <section className="section bg-white">
-        <div className="container">
-          <div className="grid grid-2 gap-12">
-            <div>
-              <h2 className="mb-6">The Parent's Role</h2>
-              <p className="text-lg text-gray-700 mb-6">
-                Navigating a student's future is a joint effort. We believe in clear boundaries and 
-                collaborative decision-making.
-              </p>
-              <div className="role-box p-8 border-l-4 border-black bg-gray-50">
-                <h4 className="mb-4">Decisions Parents Influence:</h4>
-                <ul className="list-disc pl-5 text-gray-600">
-                  <li>Financial planning and budget alignment</li>
-                  <li>Early-stage career domain preferences</li>
-                  <li>Long-term life goals and location preferences</li>
-                </ul>
-              </div>
-            </div>
-            <div className="p-8 bg-gray-900 text-white rounded-3xl">
-              <h3 className="mb-6">What NPathways Handles</h3>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <span className="text-green-400">✓</span>
-                  <span>Scientific profiling and aptitude mapping</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-green-400">✓</span>
-                  <span>Institutional research and requirement matching</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-green-400">✓</span>
-                  <span>Application mechanics and transition readiness</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-green-400">✓</span>
-                  <span>Ethical, unbiased career counseling</span>
-                </li>
+      <div className="container">
+        <div className="service-layout-grid">
+          {/* Sidebar */}
+          <aside className="service-sidebar">
+            {/* Navigation Widget */}
+            <div className="sidebar-widget">
+              <h3 className="widget-title">All Services</h3>
+              <ul className="sidebar-nav">
+                {supportServices.map(s => (
+                  <li key={s.id} className="sidebar-nav-item">
+                    <Link 
+                      to={s.link} 
+                      className={`sidebar-nav-link ${location.pathname === s.link ? 'active' : ''}`}
+                    >
+                      {s.name}
+                      <span>→</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Progress Visibility */}
-      <section className="section bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="mb-4">Full Progress Visibility</h2>
-            <p className="text-gray-600">No guesswork. Just clarity on every milestone.</p>
-          </div>
-          <div className="grid grid-3 gap-8">
-            <Card className="p-8 text-center">
-              <div className="text-4xl mb-4">📊</div>
-              <h3>Real-time Tracking</h3>
-              <p className="text-sm text-gray-600">Access student readiness audits and project status anytime.</p>
-            </Card>
-            <Card className="p-8 text-center">
-              <div className="text-4xl mb-4">📅</div>
-              <h3>Milestone Clarity</h3>
-              <p className="text-sm text-gray-600">Sync with annual timelines and critical decision deadlines.</p>
-            </Card>
-            <Card className="p-8 text-center">
-              <div className="text-4xl mb-4">💬</div>
-              <h3>Direct Checkpoints</h3>
-              <p className="text-sm text-gray-600">Scheduled transparent updates on student clarity and gaps.</p>
-            </Card>
-          </div>
-        </div>
-      </section>
+            {/* Download Widget */}
+            <div className="sidebar-widget">
+              <h3 className="widget-title">Download Resources</h3>
+              <a href="#" className="download-item" onClick={(e) => e.preventDefault()}>
+                <div className="download-icon">📄</div>
+                <div className="download-info">
+                  <span className="download-name">Parent Guide 2024</span>
+                  <span className="download-size">PDF (2.4 MB)</span>
+                </div>
+              </a>
+              <a href="#" className="download-item" onClick={(e) => e.preventDefault()}>
+                <div className="download-icon">📄</div>
+                <div className="download-info">
+                  <span className="download-name">Financial FAQ</span>
+                  <span className="download-size">PDF (1.1 MB)</span>
+                </div>
+              </a>
+            </div>
 
-      {/* Trust & Safety */}
-      <section className="section bg-black text-white">
-        <div className="container">
-          <div className="grid grid-2 gap-16 items-center">
-            <div>
-              <h2 className="mb-8 text-white">Safety & Ethics First</h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="text-3xl text-gray-400">🔒</div>
-                  <div>
-                    <h4>Data Privacy</h4>
-                    <p className="text-gray-400">Student profiles and data are encrypted and institutionally protected.</p>
+            {/* Help Widget */}
+            <div className="sidebar-widget contact-widget">
+              <h3 className="widget-title">Need Help?</h3>
+              <p>Speak with our advisors to find the right path for your child.</p>
+              <Button variant="outline" fullWidth onClick={() => window.location.href='/contact'}>
+                Contact Us Now
+              </Button>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="service-main-content">
+            <img 
+              src="https://images.unsplash.com/photo-1524508762048-013159fb0f68?q=80&w=2070&auto=format&fit=crop" 
+              alt="Parents orientation" 
+              className="featured-image shadow-xl" 
+            />
+            
+            <section className="service-intro mb-12">
+              <h2>{service.shortDescription}</h2>
+              <p className="text-xl text-gray-700 mb-8">{service.longDescription}</p>
+              
+              <h3>Key Features</h3>
+              <ul className="check-list space-y-4 mb-10">
+                {service.features.map((f, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="text-black font-bold">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="benefits-section mb-12">
+              <h3>Direct Benefits</h3>
+              <div className="benefits-grid">
+                {service.benefits.map((b, i) => (
+                  <div key={i} className="benefit-card">
+                    <h4>{b.title}</h4>
+                    <p>{b.description}</p>
                   </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="text-3xl text-gray-400">🏛️</div>
-                  <div>
-                    <h4>Structured Guidance</h4>
-                    <p className="text-gray-400">Evidence-based advice versus anecdotal or random decisions.</p>
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
-            <div className="bg-gray-800 p-12 rounded-3xl">
-              <p className="text-2xl font-light italic text-gray-300">
-                "As parents, we are partners in a process that values clarity over hype. NPathways ensures 
-                every decision is backed by data and student capability."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* Catalogue */}
-      <section className="section catalog-section">
-        <div className="container">
-          <h2 className="mb-12">Parental Resource Catalogue</h2>
-          <CatalogueItem category="Featured Resources" items={parentalResources} />
+            <section className="faq-section">
+              <h3>Common Questions</h3>
+              <div className="faq-accordion">
+                {service.faq.map((item, index) => (
+                  <div key={index} className="faq-item">
+                    <div className="faq-question" onClick={() => toggleFaq(index)}>
+                      <span>{item.question}</span>
+                      <span>{openFaq === index ? '−' : '+'}</span>
+                    </div>
+                    {openFaq === index && (
+                      <div className="faq-answer fade-in">
+                        {item.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
         </div>
-      </section>
-
-      <CommonDataSection />
-
-      {/* Final CTA */}
-      <section className="section text-center bg-gray-50">
-        <div className="container">
-          <h2 className="mb-6">Ready to start the journey?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Book a guidance session specifically designed for parents to understand the NPathways 
-            readiness framework and how it applies to your child.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
-              Book a Parent Guidance Session
-            </Button>
-            <Button variant="outline" size="large" onClick={() => window.location.href='/services'}>
-              Explore the Student Journey
-            </Button>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

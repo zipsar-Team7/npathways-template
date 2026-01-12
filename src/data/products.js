@@ -1,68 +1,106 @@
 // Product catalog data for NPathways Global
 export const products = [
+  // ASSESSMENTS
   {
-    id: 'global-career-fitment',
-    name: 'Global Career Fitment Map',
-    category: 'Digital Products',
-    price: 2999,
-    currency: 'INR',
-    description: 'Proprietary assessment generating an automated PDF with personalized career recommendations for studying abroad.',
-    features: [
-      'Comprehensive career assessment',
-      'Personalized study abroad recommendations',
-      'Automated PDF report',
-      'Suitable universities matching your profile'
-    ],
-    deliveryTime: 'Instant',
-    image: '/images/career-fitment.jpg'
-  },
-  {
-    id: 'psychometric-profiling',
-    name: 'Psychometric Profiling',
-    category: 'Digital Products',
+    id: 'psychometric-assessment',
+    name: 'Psychometric Assessment',
+    category: 'Assessments',
     price: 1999,
     currency: 'INR',
-    description: 'Digital strength-assessment tool to identify your core competencies and ideal career paths.',
+    description: 'Scientific map of cognitive patterns and personality traits to identify natural strengths.',
+    whoItIsFor: 'Students in Grades 8-10 looking for early direction.',
+    whatItUnlocks: 'Access to Foundation Programs and Career Discovery Sessions.',
+    timeRequired: '45-60 Minutes',
+    outcome: 'Detailed Strength Analysis Report (PDF)',
     features: [
-      'In-depth personality analysis',
-      'Strength and weakness mapping',
-      'Career pathway suggestions',
-      'Downloadable detailed report'
+      'Personality profiling',
+      'Cognitive pattern mapping',
+      'Initial career field suggestions',
+      'Downloadable PDF analysis'
     ],
-    deliveryTime: 'Instant',
-    image: '/images/psychometric.jpg'
+    image: '/images/products/assessment-1.jpg'
   },
   {
-    id: 'sop-masterclass-kit',
-    name: 'SOP Masterclass Kit',
-    category: 'Digital Products',
-    price: 3499,
+    id: 'career-interest-mapping',
+    name: 'Career Interest Mapping',
+    category: 'Assessments',
+    price: 2999,
     currency: 'INR',
-    description: 'Downloadable templates and video guides to craft compelling Statements of Purpose.',
+    description: 'Technical alignment of academic interests with industry domains and future study paths.',
+    whoItIsFor: 'High schoolers (Grades 11-12) finalizing career paths.',
+    whatItUnlocks: 'Access to specialized Bootcamps and Pathway Packages.',
+    timeRequired: '90 Minutes',
+    outcome: 'Career Domain Alignment Report',
     features: [
-      'Professional SOP templates',
-      'Step-by-step video tutorials',
-      'Examples from successful applications',
-      'Writing tips and best practices'
+      'Interest-to-industry mapping',
+      'Subject selection guidance',
+      'University major recommendations',
+      'Industry trend alignment'
     ],
-    deliveryTime: 'Instant',
-    image: '/images/sop-kit.jpg'
+    image: '/images/products/assessment-2.jpg'
   },
+
+  // BOOTCAMPS
   {
-    id: 'visa-dossier-kit',
-    name: 'Visa Dossier Kit',
-    category: 'Digital Products',
-    price: 2499,
+    id: 'global-career-blueprint',
+    name: 'Global Career Blueprint',
+    category: 'Bootcamps',
+    price: 14999,
     currency: 'INR',
-    description: 'Mandatory checklist and template package for visa applications to multiple countries.',
+    description: 'Intensive 4-week accelerator designed to build a solid profile for international admissions.',
+    whoItIsFor: 'Students targeting Top 100 Global Universities.',
+    whatItUnlocks: 'Profile Audit and Alumni Access.',
+    duration: '4 Weeks',
+    mode: 'Hybrid',
     features: [
-      'Country-specific checklists',
-      'Document templates',
-      'Visa interview preparation guide',
-      'Common mistakes to avoid'
+      'Profile building strategy',
+      'Extracurricular optimization',
+      'Academic goal setting',
+      'Global university landscape overview'
     ],
-    deliveryTime: 'Instant',
-    image: '/images/visa-kit.jpg'
+    image: '/images/products/bootcamp-1.jpg'
+  },
+
+  // PROGRAMS
+  {
+    id: 'foundation-readiness',
+    name: 'Foundation Readiness Program',
+    category: 'Programs',
+    price: 24999,
+    currency: 'INR',
+    description: 'A 3-month structured engagement focused on building core competencies for transition.',
+    whoItIsFor: 'Students in early transition phases (Grade 10/11).',
+    whatItUnlocks: 'Quarterly Progress Audits.',
+    duration: '3 Months',
+    deliveryModel: 'Fortnightly Sessions',
+    features: [
+      'Skill gap analysis',
+      'Soft skill development',
+      'Academic tracking',
+      'Parent alignment sessions'
+    ],
+    image: '/images/products/program-1.jpg'
+  },
+
+  // FULL PATHWAY PACKAGES
+  {
+    id: 'elite-university-pathway',
+    name: 'Elite University Pathway',
+    category: 'Pathways',
+    price: 149999,
+    currency: 'INR',
+    description: 'End-to-end guided journey from assessment to enrollment in top-tier global institutions.',
+    whoItIsFor: 'High-commitment students seeking comprehensive guidance.',
+    whatItUnlocks: 'Unlimited Advisor Support & Milestone Access.',
+    duration: '1-2 Years',
+    advisorInvolvement: 'High - Dedicated Mentor',
+    features: [
+      'Comprehensive profile management',
+      'Standardized test strategy',
+      'Application & SOP guidance',
+      'Visa & transition support'
+    ],
+    image: '/images/products/pathway-1.jpg'
   }
 ];
 
@@ -79,10 +117,22 @@ export const formatCurrency = (amount, currency = 'INR') => {
   }).format(amount);
 };
 
-// Helper function to get recommended products
-export const getRecommendedProducts = (currentProductId, count = 3) => {
-  const otherProducts = products.filter(product => product.id !== currentProductId);
-  // Shuffle and return the requested count
-  return otherProducts.sort(() => Math.random() - 0.5).slice(0, count);
+// Helper function to get products by category
+export const getProductsByCategory = (category) => {
+  return products.filter(product => product.category === category);
 };
+
+// Subscriptions (Coming Soon) Data Structure Preview
+export const upcomingSubscriptions = [
+  {
+    id: 'mentorship-plus',
+    name: 'Mentorship Plus',
+    description: 'Continuous advisory and resource access for long-term growth.',
+    features: [
+      'Monthly expert check-ins',
+      'Content library access',
+      'Priority event booking'
+    ]
+  }
+];
 

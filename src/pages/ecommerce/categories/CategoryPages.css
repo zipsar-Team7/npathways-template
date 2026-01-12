@@ -1,0 +1,76 @@
+.product-category-page .category-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.guided-product-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.guided-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.price-tag {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+}
+
+.product-meta .meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-meta .label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+}
+
+.product-meta .value {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: bold;
+}
+
+/* Specific for Outcomes & Meta */
+.card-footer {
+  border-top: 1px solid var(--color-gray-100);
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

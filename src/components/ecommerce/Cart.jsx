@@ -37,7 +37,7 @@ const Cart = () => {
             <div className="empty-cart">
               <span className="empty-icon">🛒</span>
               <p>Your cart is empty</p>
-              <Button variant="outline" onClick={toggleCart}>
+              <Button variant="outline" fullWidth onClick={() => { toggleCart(); navigate('/products'); }}>
                 Continue Shopping
               </Button>
             </div>

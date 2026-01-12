@@ -48,7 +48,7 @@ const MyProducts = () => {
         }}>
           <h3 style={{ color: 'var(--color-text-primary)' }}>No products yet</h3>
           <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>Explore our shop to start your journey.</p>
-          <Button variant="primary" onClick={() => window.location.href='/shop'}>Go to Shop</Button>
+          <Button variant="primary" onClick={() => navigate('/products')}>Browse Products</Button>
         </div>
       )}
     </div>

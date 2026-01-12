@@ -1,125 +1,133 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { supportServices } from '../../../data/services';
 import Button from '../../../components/common/Button';
-import Card from '../../../components/common/Card';
-import './CareerAssessments.css';
+import './ServiceDetails.css';
 
 const CareerAssessments = () => {
-  const assessments = [
-    {
-      title: "Psychometric Assessment",
-      purpose: "Map cognitive patterns and personality traits.",
-      who: "Students in Grades 8-10 looking for early direction.",
-      outcome: "Scientific identification of natural strengths."
-    },
-    {
-      title: "Career Interest Mapping",
-      purpose: "Align academic interests with industry domains.",
-      who: "High schoolers (Grades 11-12) finalizing career paths.",
-      outcome: "List of top 3 career domains for future study."
-    },
-    {
-      title: "Readiness & Gap Analysis",
-      purpose: "Compare current skills against global university standards.",
-      who: "Global aspirants aiming for top-tier institutions.",
-      outcome: "A personalized roadmap to bridge skill gaps."
-    },
-    {
-      title: "Skill & Aptitude Snapshot",
-      purpose: "Quick evaluation of quantitative and verbal logic.",
-      who: "Students preparing for entrance or competitive exams.",
-      outcome: "Baseline scores and areas of improvement."
-    }
-  ];
+  const service = supportServices.find(s => s.id === 'career-assessments');
+  const location = useLocation();
+  const [openFaq, setOpenFaq] = useState(null);
+
+  if (!service) return null;
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
-    <div className="services-page career-assessments fade-in">
-      {/* Hero Section */}
-      <section className="section services-hero assessment-hero text-center">
-        <div className="container">
-          <h1 className="mb-6">Career & Assessments</h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Clarity is built, not found. Our scientific assessments reduce confusion and risk 
-            by providing a data-backed foundation for every decision.
-          </p>
-          <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
-            Book a Career Discovery Session
-          </Button>
+    <div className="service-detail-page fade-in">
+      {/* Hero / Breadcrumb */}
+      <section className="service-hero bg-gray">
+        <div className="container text-center">
+          <nav className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <Link to="/services">Services</Link>
+            <span>/</span>
+            <span className="text-black font-medium">Assessments</span>
+          </nav>
+          <h1>{service.name}</h1>
         </div>
       </section>
 
-      {/* Assessment Catalogue */}
-      <section className="section bg-white">
-        <div className="container">
-          <h2 className="text-center mb-16">Assessment Catalogue</h2>
-          <div className="grid grid-2 bg-gray-50 rounded-3xl overflow-hidden border border-gray-100">
-            {assessments.map((test, index) => (
-              <div key={index} className="assessment-item p-10 border-b border-r border-gray-200 hover:bg-white transition-colors">
-                <h3 className="mb-4">{test.title}</h3>
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Purpose</span>
-                    <p className="text-sm text-gray-600">{test.purpose}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Who it’s for</span>
-                    <p className="text-sm text-gray-600">{test.who}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Outcome</span>
-                    <p className="text-sm font-semibold text-black">{test.outcome}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sample Outputs */}
-      <section className="section bg-gray-50">
-        <div className="container">
-          <div className="grid grid-2 gap-16 items-center">
-            <div>
-              <h2 className="mb-6">Actionable Insights, Not Just Scores</h2>
-              <p className="text-lg text-gray-700 mb-8">
-                Our reports don't just give you a number. They provide a narrative of the student's 
-                potential and a clear path forward.
-              </p>
-              <ul className="space-y-4 text-gray-600">
-                <li className="flex gap-2"><strong>→</strong> Cognitive pattern mapping</li>
-                <li className="flex gap-2"><strong>→</strong> Preferred learning styles</li>
-                <li className="flex gap-2"><strong>→</strong> Career domain compatibility indices</li>
+      <div className="container">
+        <div className="service-layout-grid">
+          {/* Sidebar */}
+          <aside className="service-sidebar">
+            <div className="sidebar-widget">
+              <h3 className="widget-title">All Services</h3>
+              <ul className="sidebar-nav">
+                {supportServices.map(s => (
+                  <li key={s.id} className="sidebar-nav-item">
+                    <Link 
+                      to={s.link} 
+                      className={`sidebar-nav-link ${location.pathname === s.link ? 'active' : ''}`}
+                    >
+                      {s.name}
+                      <span>→</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="p-4 bg-white border border-gray-200 rounded-3xl shadow-lg">
-              <div className="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center min-h-[300px] border-dashed border-2 border-gray-200">
-                <span className="text-4xl mb-4">📄</span>
-                <p className="font-bold text-gray-400">Sample Report Preview</p>
-                <p className="text-xs text-gray-400 mt-2">(Visual preview only)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Final CTA */}
-      <section className="section text-center">
-        <div className="container">
-          <h2 className="mb-6">Gain Clarity Today</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Not sure which assessment is right for you? Book a discovery session to talk to our 
-            experts and find the best starting point for your student journey.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
-              Explore Assessments
-            </Button>
-            <Button variant="outline" size="large" onClick={() => window.location.href='/contact'}>
-              Book a Career Discovery Session
-            </Button>
-          </div>
+            <div className="sidebar-widget">
+              <h3 className="widget-title">Sample Reports</h3>
+              <a href="#" className="download-item" onClick={(e) => e.preventDefault()}>
+                <div className="download-icon">📊</div>
+                <div className="download-info">
+                  <span className="download-name">Sample Strength Report</span>
+                  <span className="download-size">PDF (3.2 MB)</span>
+                </div>
+              </a>
+            </div>
+
+            <div className="sidebar-widget contact-widget">
+              <h3 className="widget-title">Ready to Begin?</h3>
+              <p>Get scientific clarity on your career path today.</p>
+              <Button variant="outline" fullWidth onClick={() => window.location.href='/products/assessments'}>
+                View All Assessments
+              </Button>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="service-main-content">
+            <img 
+              src="https://images.unsplash.com/photo-1454165833762-010240aa7f06?q=80&w=2070&auto=format&fit=crop" 
+              alt="Career assessments" 
+              className="featured-image shadow-xl" 
+            />
+            
+            <section className="service-intro mb-12">
+              <h2>{service.shortDescription}</h2>
+              <p className="text-xl text-gray-700 mb-8">{service.longDescription}</p>
+              
+              <h3>Assessment Features</h3>
+              <ul className="check-list space-y-4 mb-10">
+                {service.features.map((f, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="text-black font-bold">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="benefits-section mb-12">
+              <h3>The Value Proposition</h3>
+              <div className="benefits-grid">
+                {service.benefits.map((b, i) => (
+                  <div key={i} className="benefit-card">
+                    <h4>{b.title}</h4>
+                    <p>{b.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="faq-section">
+              <h3>Assessment FAQ</h3>
+              <div className="faq-accordion">
+                {service.faq.map((item, index) => (
+                  <div key={index} className="faq-item">
+                    <div className="faq-question" onClick={() => toggleFaq(index)}>
+                      <span>{item.question}</span>
+                      <span>{openFaq === index ? '−' : '+'}</span>
+                    </div>
+                    {openFaq === index && (
+                      <div className="faq-answer fade-in">
+                        {item.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

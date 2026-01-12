@@ -1,0 +1,224 @@
+/* Service Details Layout - Replicating e.visa coaching-single structure in B&W */
+
+.service-detail-page {
+  padding-bottom: 5rem;
+  background-color: #fff;
+}
+
+/* Hero / Breadcrumb Section */
+.service-hero {
+  padding: 4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4rem;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #000;
+}
+
+/* Layout Grid */
+.service-layout-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+}
+
+/* SIDEBAR */
+.service-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sidebar-widget {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.widget-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+}
+
+/* Navigation Widget */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-radius: 0.75rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav-link:hover, 
+.sidebar-nav-link.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Download Widget */
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s;
+}
+
+.download-item:hover {
+  border-color: #000;
+}
+
+.download-icon {
+  font-size: 1.5rem;
+}
+
+.download-info span {
+  display: block;
+}
+
+.download-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.download-size {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* Contact Widget */
+.contact-widget {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-widget .widget-title {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+
+.contact-widget p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* MAIN CONTENT */
+.service-main-content .featured-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 2rem;
+  margin-bottom: 2.5rem;
+  background: #eee;
+}
+
+.service-main-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-main-content p {
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.benefit-card {
+  padding: 2rem;
+  background: #fcfcfc;
+  border-left: 4px solid #000;
+}
+
+.benefit-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.benefit-card p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* FAQ Accordion */
+.faq-section {
+  margin-top: 4rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .service-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-sidebar {
+    order: 2;
+  }
+}

@@ -1,122 +1,153 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Card from '../../components/common/Card';
 import Button from '../../components/common/Button';
 import { consultancyServices, supportServices } from '../../data/services';
-// We also need products for the preview section, let's fix the import
-import { products as digitalProducts } from '../../data/products';
 import './Services.css';
 
 const Services = () => {
+  // Combine all services for the grid overview
+  const allServices = [
+    {
+      ...consultancyServices[0],
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition"
+    },
+    {
+      ...consultancyServices[1],
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition"
+    },
+    {
+      ...consultancyServices[2],
+      image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition"
+    },
+    {
+      ...supportServices.find(s => s.id === 'for-parents'),
+      image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop",
+      category: "Stakeholder Services"
+    },
+    {
+      ...supportServices.find(s => s.id === 'for-schools'),
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
+      category: "Stakeholder Services"
+    },
+    {
+      ...supportServices.find(s => s.id === 'career-assessments'),
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools"
+    },
+    {
+      ...supportServices.find(s => s.id === 'bootcamps'),
+      image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools"
+    },
+    {
+      ...supportServices.find(s => s.id === 'school-programs'),
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools"
+    }
+  ];
+
   return (
     <div className="services-page fade-in">
-      {/* Hero */}
-      <section className="section bg-gray services-hero">
-        <div className="container text-center">
-          <h1>Our <span className="text-primary">Services</span></h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Comprehensive support for your global education journey, from stakeholder alignment to 
-            intensive core offerings.
-          </p>
+      {/* Global Banner */}
+      <section className="services-hero">
+        <div className="container">
+          <nav className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <span className="text-black">Our Services</span>
+          </nav>
+          <h1>Our <span className="text-black">Services</span></h1>
         </div>
       </section>
 
-      {/* Categories Overview */}
-      <section className="section">
+      {/* Main Services Grid */}
+      <section className="services-grid-section">
         <div className="container">
-          <div className="grid grid-2 gap-12">
-            {/* Category 1 */}
-            <div className="service-category-card p-10 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Stakeholder Services</span>
-              <h2 className="mb-6">For Parents & Schools</h2>
-              <p className="text-gray-600 mb-8">
-                Institutional and parental alignment programs designed to ensure 
-                safety, clarity, and institutional success.
-              </p>
-              <div className="space-y-4">
-                <Link to="/services/parents" className="category-link flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
-                  <span>For Parents</span>
-                  <span>→</span>
-                </Link>
-                <Link to="/services/schools" className="category-link flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
-                  <span>For Schools</span>
-                  <span>→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Category 2 */}
-            <div className="service-category-card p-10 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Core Offerings</span>
-              <h2 className="mb-6">Readiness & Accelerators</h2>
-              <p className="text-gray-600 mb-8">
-                Scientific assessments and intensive bootcamps focused on 
-                student readiness for global education.
-              </p>
-              <div className="space-y-4">
-                <Link to="/services/assessments" className="category-link flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
-                  <span>Career & Assessments</span>
-                  <span>→</span>
-                </Link>
-                <Link to="/services/bootcamps" className="category-link flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
-                  <span>Bootcamps</span>
-                  <span>→</span>
-                </Link>
-                <Link to="/services/school-programs" className="category-link flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
-                  <span>School Programs</span>
-                  <span>→</span>
-                </Link>
-              </div>
-            </div>
+          <div className="section-intro-center">
+            <span className="mini-title">What We Offer</span>
+            <h2 className="main-section-title">Comprehensive support for your global journey</h2>
           </div>
-        </div>
-      </section>
 
-      {/* Consultancy Services - Journey Timeline */}
-      <section className="section bg-gray-50">
-        <div className="container">
-          <div className="section-header text-center mb-12">
-            <h2 className="section-title">The Student Journey</h2>
-            <p className="section-subtitle">How we manage transitions and readiness at scale</p>
-          </div>
-          
-          <div className="journey-timeline">
-            {consultancyServices.map((service, index) => (
-              <div key={service.id} className={`journey-step ${index % 2 === 0 ? 'left' : 'right'}`}>
-                <div className="step-number">
-                  <span>Step {index + 1}</span>
+          <div className="services-main-grid">
+            {allServices.map((service) => (
+              <div key={service.id} className="service-card-premium">
+                <div className="service-card-image-wrap">
+                  <img src={service.image} alt={service.name} />
                 </div>
-                
-                <div className="step-content">
-                  <div className="step-icon">{service.icon}</div>
-                  <h3 className="step-title">{service.name}</h3>
-                  <p className="step-description">{service.description}</p>
-                  
-                  <div className="features-list">
-                    <h4>What's Included:</h4>
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="feature-item">
-                        <span className="checkmark">✓</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <div className="card-icon-float">{service.icon}</div>
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">{service.category}</span>
+                <h3>{service.name}</h3>
+                <p>{service.shortDescription || service.description.substring(0, 100) + '...'}</p>
+                <Link to={service.link || '/services'} className="read-more-btn">
+                  Read More <span>→</span>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section text-center">
+      {/* Why Choose Us Section */}
+      <section className="why-choose-us">
         <div className="container">
-          <h2 className="mb-6">Not Sure Where to Start?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Book a discovery session with our experts to find the right path for your specific needs.
+          <div className="split-layout">
+            <div className="why-content">
+              <span className="mini-title text-gray-400">Why NPathways?</span>
+              <h2 className="text-4xl mb-8 text-white">Why Choose Our Expert Guidance?</h2>
+              <p className="text-gray-400 mb-10 leading-relaxed text-lg">
+                We don't just provide admissions support. We provide a scientific, role-aware strategy 
+                that aligns student ambitions with family security and institutional excellence.
+              </p>
+              <div className="why-features">
+                <div className="feature-box-bw">
+                  <h4>Scientific Approach</h4>
+                  <p>Data-driven assessments for path clarity.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>Global Network</h4>
+                  <p>Direct access to top 1% global institutions.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>End-to-End</h4>
+                  <p>From 8th Grade prep to arrival support.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>Trust First</h4>
+                  <p>Verified destinations and student safety.</p>
+                </div>
+              </div>
+            </div>
+            <div className="why-visual">
+              <div className="relative border-4 border-white rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                  alt="Team collaboration" 
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="section text-center py-24">
+        <div className="container">
+          <h2 className="text-3xl mb-6">Need a Personalized Strategy?</h2>
+          <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+            Book a discovery session with our expert counselors to find the right path for your unique profile.
           </p>
-          <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
-            Book a Consultation
-          </Button>
+          <div className="flex justify-center gap-6">
+            <Button variant="primary" size="large" onClick={() => window.location.href='/contact'}>
+              Talk to an Advisor
+            </Button>
+            <Button variant="outline" size="large" onClick={() => window.location.href='/services/assessments'}>
+              Explore Tools
+            </Button>
+          </div>
         </div>
       </section>
     </div>
