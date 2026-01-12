@@ -1,0 +1,61 @@
+/* Loading Screen Styles - Lightweight */
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 0.3s ease 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-logo {
+  margin-bottom: 1.5rem;
+}
+
+.loading-logo .logo-text {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: -1px;
+}
+
+.loading-logo .logo-sub {
+  font-size: 0.875rem;
+  color: #666;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #eee;
+  border-top-color: #000;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Cart from "./components/ecommerce/Cart";
+import LoadingScreen from "./components/common/LoadingScreen";
 
 // Layouts
 import PublicLayout from "./components/layout/PublicLayout";
@@ -55,6 +56,7 @@ const NotFound = () => (
 function App() {
   return (
     <>
+      <LoadingScreen />
       <Cart /> {/* Global Cart Sidebar */}
       <Routes>
         {/* Public Routes */}
