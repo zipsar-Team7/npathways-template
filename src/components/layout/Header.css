@@ -177,6 +177,104 @@
   opacity: 0;
 }
 
+/* ==================== DROPDOWN ==================== */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chevron {
+  font-size: 0.75rem;
+  transition: transform var(--transition-base);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: white;
+  min-width: 450px;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-gray-100);
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  z-index: var(--z-dropdown);
+  margin-top: 1rem;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown:hover .chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown-category {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.category-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-2);
+  display: block;
+}
+
+.dropdown-category a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-2) 0;
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+}
+
+.dropdown-category a:hover {
+  color: var(--color-brand-primary);
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    transform: none !important;
+    min-width: 100%;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    margin-top: 0;
+  }
+  
+  .category-label {
+    margin-top: var(--spacing-4);
+  }
+}
+
 /* ==================== HEADER ACTIONS ==================== */
 
 .header-actions {

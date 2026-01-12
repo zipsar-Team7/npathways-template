@@ -1,0 +1,20 @@
+.school-programs-hero {
+  background: white;
+  padding-top: var(--spacing-20);
+}
+
+.program-card {
+  transition: all var(--transition-base);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}

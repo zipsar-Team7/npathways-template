@@ -35,23 +35,40 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-              <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Home
-              </Link>
-              <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                About
-              </Link>
-              <Link to="/services" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Services
-              </Link>
-              <Link to="/shop" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Shop
-              </Link>
-              <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Contact
-              </Link>
-            </nav>
+              <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+                <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                  Home
+                </Link>
+                <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                  About
+                </Link>
+                
+                <div className="nav-dropdown">
+                  <Link to="/services" className="nav-link dropdown-toggle">
+                    Services <span className="chevron">▾</span>
+                  </Link>
+                  <div className="dropdown-menu">
+                    <div className="dropdown-category">
+                      <span className="category-label">Stakeholder Services</span>
+                      <Link to="/services/parents" onClick={() => setIsMenuOpen(false)}>For Parents</Link>
+                      <Link to="/services/schools" onClick={() => setIsMenuOpen(false)}>For Schools</Link>
+                    </div>
+                    <div className="dropdown-category">
+                      <span className="category-label">Core Offerings</span>
+                      <Link to="/services/assessments" onClick={() => setIsMenuOpen(false)}>Career & Assessments</Link>
+                      <Link to="/services/bootcamps" onClick={() => setIsMenuOpen(false)}>Bootcamps</Link>
+                      <Link to="/services/school-programs" onClick={() => setIsMenuOpen(false)}>School Programs</Link>
+                    </div>
+                  </div>
+                </div>
+
+                <Link to="/shop" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                  Shop
+                </Link>
+                <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                  Contact
+                </Link>
+              </nav>
 
             {/* Actions */}
             <div className="header-actions">

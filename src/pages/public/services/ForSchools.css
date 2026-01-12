@@ -1,0 +1,41 @@
+.school-hero {
+  background: var(--color-bg-secondary);
+}
+
+.institutional-service-box {
+  padding: var(--spacing-8);
+  background: white;
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-2xl);
+  height: 100%;
+}
+
+.service-number {
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  margin-bottom: var(--spacing-4);
+}
+
+.institutional-service-box h4 {
+  margin-bottom: var(--spacing-3);
+  font-size: var(--font-size-lg);
+}
+
+.institutional-service-box p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}

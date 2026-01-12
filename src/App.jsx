@@ -9,6 +9,11 @@ import DashboardLayout from './components/dashboard/DashboardLayout';
 import Home from './pages/public/Home';
 import About from './pages/public/About';
 import Services from './pages/public/Services';
+import ForParents from './pages/public/services/ForParents';
+import ForSchools from './pages/public/services/ForSchools';
+import CareerAssessments from './pages/public/services/CareerAssessments';
+import Bootcamps from './pages/public/services/Bootcamps';
+import SchoolPrograms from './pages/public/services/SchoolPrograms';
 import Contact from './pages/public/Contact';
 
 // E-Commerce Pages
@@ -45,6 +50,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/parents" element={<ForParents />} />
+          <Route path="/services/schools" element={<ForSchools />} />
+          <Route path="/services/assessments" element={<CareerAssessments />} />
+          <Route path="/services/bootcamps" element={<Bootcamps />} />
+          <Route path="/services/school-programs" element={<SchoolPrograms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
