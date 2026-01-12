@@ -363,6 +363,16 @@
 
 @media (max-width: 768px) {
   .home-hero-premium { padding-bottom: 15rem; }
+  .hero-actions-premium {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .hero-actions-premium button,
+  .hero-actions-premium .btn {
+    width: 100%;
+    max-width: 320px;
+  }
   .finder-card { grid-template-columns: 1fr; bottom: -120px; }
   .teaser-box { flex-direction: column; text-align: center; padding: 3rem 2rem; }
   .teaser-visual { margin-top: 4rem; }
