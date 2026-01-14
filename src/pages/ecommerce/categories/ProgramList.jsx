@@ -79,7 +79,20 @@ const ProgramList = () => {
               </h3>
               <ul className="benefits-list">
                 <li>
-                  <div className="icon">✓</div>
+                  <div className="icon">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
                   <div className="text">
                     <h5>Dedicated Advisor</h5>
                     <p>
@@ -89,7 +102,20 @@ const ProgramList = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="icon">✓</div>
+                  <div className="icon">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
                   <div className="text">
                     <h5>Accountability Framework</h5>
                     <p>
@@ -99,7 +125,20 @@ const ProgramList = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="icon">✓</div>
+                  <div className="icon">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
                   <div className="text">
                     <h5>Community Support</h5>
                     <p>
@@ -109,7 +148,20 @@ const ProgramList = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="icon">✓</div>
+                  <div className="icon">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
                   <div className="text">
                     <h5>Guaranteed Outcomes</h5>
                     <p>
@@ -174,18 +226,21 @@ const ProgramList = () => {
               <div className="content-product-list">
                 {programs.map((item) => (
                   <div key={item.id} className="product-list-item">
-                    <div>
+                    <div className="product-list-item-content">
                       <h3>{item.name}</h3>
                       <p className="text-gray-600 mb-4 text-sm">
                         {item.description}
                       </p>
                       <div className="product-meta-row">
-                        <span>⏳ {item.duration}</span>
-                        <span>🔄 {item.deliveryModel}</span>
+                        <span className="meta-label">Duration:</span>
+                        <span>{item.duration}</span>
+                        <span className="meta-sep">|</span>
+                        <span className="meta-label">Format:</span>
+                        <span>{item.deliveryModel}</span>
                       </div>
                     </div>
-                    <div className="flex flex-col items-end justify-between min-w-[140px]">
-                      <span className="text-xl font-bold">
+                    <div className="product-list-item-actions">
+                      <span className="price">
                         {formatCurrency(item.price)}
                       </span>
                       <Button
@@ -213,7 +268,7 @@ const ProgramList = () => {
                   variant="premium-outline"
                   size="large"
                   onClick={() => (window.location.href = "/contact")}
-                  className="bg-white text-black border-2 border-white hover:bg-gray-200"
+                  className="mt-4"
                 >
                   Schedule a Consultation
                 </Button>
