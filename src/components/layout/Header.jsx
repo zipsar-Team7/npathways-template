@@ -7,6 +7,7 @@ import "./Header.css";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const { isAuthenticated, user } = useAuth();
   const { getCartCount, toggleCart } = useCart();
 
@@ -23,6 +24,16 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleDropdownToggle = (e, name) => {
+    // Only apply toggle logic on mobile
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      setActiveDropdown(activeDropdown === name ? null : name);
+    } else {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-island">
@@ -33,7 +44,6 @@ const Header = () => {
               <span className="logo-text">NPathways</span>
               <span className="logo-subtitle">Global</span>
             </Link>
-
             {/* Desktop Navigation */}
             <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
               <Link
@@ -43,8 +53,17 @@ const Header = () => {
               >
                 Home
               </Link>
-              <div className="nav-dropdown">
-                <Link to="/about" className="nav-link dropdown-toggle">
+
+              <div
+                className={`nav-dropdown ${
+                  activeDropdown === "about" ? "active" : ""
+                }`}
+              >
+                <Link
+                  to="/about"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => handleDropdownToggle(e, "about")}
+                >
                   About <span className="chevron">▾</span>
                 </Link>
                 <div className="dropdown-menu">
@@ -69,8 +88,16 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="nav-dropdown">
-                <Link to="/services" className="nav-link dropdown-toggle">
+              <div
+                className={`nav-dropdown ${
+                  activeDropdown === "services" ? "active" : ""
+                }`}
+              >
+                <Link
+                  to="/services"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => handleDropdownToggle(e, "services")}
+                >
                   Services <span className="chevron">▾</span>
                 </Link>
                 <div className="dropdown-menu">
@@ -113,8 +140,16 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="nav-dropdown">
-                <Link to="/products" className="nav-link dropdown-toggle">
+              <div
+                className={`nav-dropdown ${
+                  activeDropdown === "products" ? "active" : ""
+                }`}
+              >
+                <Link
+                  to="/products"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => handleDropdownToggle(e, "products")}
+                >
                   Products <span className="chevron">▾</span>
                 </Link>
                 <div className="dropdown-menu">
