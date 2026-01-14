@@ -31,18 +31,49 @@
   color: #000;
 }
 
-/* Layout Grid */
+/* Split Layout - Similar to ProductDetail */
+/* Split Layout - Modified for Image Top / Content Bottom */
 .service-layout-grid {
   display: grid;
   grid-template-columns: 350px 1fr;
-  gap: 4rem;
+  align-items: start;
+  gap: 0;
+  min-height: auto;
 }
 
 /* SIDEBAR */
 .service-sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom scrollbar for sidebar */
+.service-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.service-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.service-sidebar::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.service-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .sidebar-widget {
@@ -96,7 +127,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  border: 1px solid #eee;
+  border: 1px solid #919191;
   border-radius: 1rem;
   margin-bottom: 1rem;
   text-decoration: none;
@@ -144,14 +175,40 @@
   margin-bottom: 2rem;
 }
 
-/* MAIN CONTENT */
-.service-main-content .featured-image {
+/* Fixed Image Panel - Now Top Row of Main Column */
+.service-image-panel {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  top: 0;
+  height: 400px;
+  background: #f5f5f5;
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+  margin-right: 2rem; /* Add margin to separate from edge if needed, matching padding */
+  margin-top: 2rem;
+}
+
+.service-image-panel img {
   width: 100%;
-  height: 450px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 2rem;
-  margin-bottom: 2.5rem;
-  background: #eee;
+  filter: grayscale(100%);
+}
+
+/* MAIN CONTENT - Now Bottom Row of Main Column */
+.service-main-content {
+  grid-column: 2;
+  grid-row: 2;
+  background: #fff;
+  overflow-y: visible; /* Regular scrolling */
+  padding: 3rem;
+  height: auto;
+}
+
+/* Remove old featured-image class since image is now in panel */
+.service-main-content .featured-image {
+  display: none;
 }
 
 .service-main-content h2 {
@@ -213,23 +270,132 @@
   font-size: 0.95rem;
 }
 
+/* Resources Section (moved from sidebar) */
+.resources-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: #f9f9f9;
+  border-radius: 1.5rem;
+}
+
+.resources-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Help CTA Section (moved from sidebar) */
+.help-cta-section {
+  margin-top: 3rem;
+}
+
+.help-cta-box {
+  background: #000;
+  color: #fff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.help-cta-box h3 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.help-cta-box p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .service-layout-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-rows: auto;
+    gap: 0;
   }
   
   .service-sidebar {
-    order: -1; /* Move sidebar to top on mobile */
+    grid-column: 1;
+    grid-row: auto;
+    order: -2; /* Move sidebar to top on mobile */
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+    padding-top: 0;
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+    border-top: none;
+  }
+  
+  .service-image-panel {
+    grid-column: 1;
+    grid-row: auto;
+    position: relative;
+    top: 0;
+    height: 300px;
+    order: -1; /* Image below sidebar */
+    margin-right: 0;
+    margin-top: 0;
+    border-radius: 0;
+  }
+  
+  .service-main-content {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 2rem;
+    order: 0;
   }
 
   .service-hero {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+    padding: 1rem 0;
+    margin-bottom: 0;
   }
 
   .sidebar-widget {
+    padding: 1.5rem;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .sidebar-widget .widget-title {
+    border-bottom: none;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive for new main content sections */
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resources-section,
+  .help-cta-box {
+    padding: 2rem;
+  }
+  
+  .help-cta-box h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-image-panel {
+    height: 40vh;
+  }
+  
+  .service-main-content {
     padding: 1.5rem;
   }
 }

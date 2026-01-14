@@ -54,58 +54,18 @@ const ForParents = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Download Widget */}
-            <div className="sidebar-widget">
-              <h3 className="widget-title">Download Resources</h3>
-              <a
-                href="#"
-                className="download-item"
-                onClick={(e) => e.preventDefault()}
-              >
-                <div className="download-icon">PDF</div>
-                <div className="download-info">
-                  <span className="download-name">Parent Guide 2024</span>
-                  <span className="download-size">PDF (2.4 MB)</span>
-                </div>
-              </a>
-              <a
-                href="#"
-                className="download-item"
-                onClick={(e) => e.preventDefault()}
-              >
-                <div className="download-icon">PDF</div>
-                <div className="download-info">
-                  <span className="download-name">Financial FAQ</span>
-                  <span className="download-size">PDF (1.1 MB)</span>
-                </div>
-              </a>
-            </div>
-
-            {/* Help Widget */}
-            <div className="sidebar-widget contact-widget">
-              <h3 className="widget-title">Need Help?</h3>
-              <p>
-                Speak with our advisors to find the right path for your child.
-              </p>
-              <Button
-                variant="outline"
-                fullWidth
-                onClick={() => (window.location.href = "/contact")}
-              >
-                Contact Us Now
-              </Button>
-            </div>
           </aside>
 
-          {/* Main Content */}
-          <main className="service-main-content">
+          {/* Fixed Image Panel */}
+          <div className="service-image-panel">
             <img
               src="https://picsum.photos/seed/parents/800/500"
               alt="Parents orientation"
-              className="featured-image shadow-xl"
             />
+          </div>
 
+          {/* Main Content */}
+          <main className="service-main-content">
             <section className="service-intro mb-12">
               <h2>{service.shortDescription}</h2>
               <p className="text-xl text-gray-700 mb-8">
@@ -152,6 +112,52 @@ const ForParents = () => {
                     )}
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* Download Resources Section - Moved from Sidebar */}
+            <section className="resources-section mb-12">
+              <h3>Download Resources</h3>
+              <div className="resources-grid">
+                <a
+                  href="#"
+                  className="download-item"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <div className="download-icon">PDF</div>
+                  <div className="download-info">
+                    <span className="download-name">Parent Guide 2024</span>
+                    <span className="download-size">PDF (2.4 MB)</span>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="download-item"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <div className="download-icon">PDF</div>
+                  <div className="download-info">
+                    <span className="download-name">Financial FAQ</span>
+                    <span className="download-size">PDF (1.1 MB)</span>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            {/* Help Widget - Moved from Sidebar */}
+            <section className="help-cta-section">
+              <div className="help-cta-box">
+                <h3>Need Help?</h3>
+                <p>
+                  Speak with our advisors to find the right path for your child.
+                </p>
+                <Button
+                  variant="premium"
+                  size="large"
+                  onClick={() => (window.location.href = "/contact")}
+                >
+                  Contact Us Now
+                </Button>
               </div>
             </section>
           </main>

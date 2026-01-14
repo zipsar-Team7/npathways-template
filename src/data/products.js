@@ -69,7 +69,7 @@ export const products = [
     price: 24999,
     currency: 'INR',
     description: 'A 3-month structured engagement focused on building core competencies for transition.',
-    whoItIsFor: 'Students in early transition phases (Grade 10/11).',
+    whoItIsFor: 'Students in early transition stages (Grade 10/11).',
     whatItUnlocks: 'Quarterly Progress Audits.',
     duration: '3 Months',
     deliveryModel: 'Fortnightly Sessions',

@@ -166,7 +166,7 @@ const Services = () => {
             Book a discovery session with our expert counselors to find the
             right path for your unique profile.
           </p>
-          <div className="flex justify-center gap-6">
+          <div className="cta-buttons">
             <Button
               variant="primary"
               size="large"

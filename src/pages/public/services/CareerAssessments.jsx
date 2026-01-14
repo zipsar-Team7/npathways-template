@@ -53,43 +53,18 @@ const CareerAssessments = () => {
                 ))}
               </ul>
             </div>
-
-            <div className="sidebar-widget">
-              <h3 className="widget-title">Sample Reports</h3>
-              <a
-                href="#"
-                className="download-item"
-                onClick={(e) => e.preventDefault()}
-              >
-                <div className="download-icon">PDF</div>
-                <div className="download-info">
-                  <span className="download-name">Sample Strength Report</span>
-                  <span className="download-size">PDF (3.2 MB)</span>
-                </div>
-              </a>
-            </div>
-
-            <div className="sidebar-widget contact-widget">
-              <h3 className="widget-title">Ready to Begin?</h3>
-              <p>Get scientific clarity on your career path today.</p>
-              <Button
-                variant="outline"
-                fullWidth
-                onClick={() => (window.location.href = "/products/assessments")}
-              >
-                View All Assessments
-              </Button>
-            </div>
           </aside>
 
-          {/* Main Content */}
-          <main className="service-main-content">
+          {/* Fixed Image Panel */}
+          <div className="service-image-panel">
             <img
               src="https://picsum.photos/seed/career/800/500"
               alt="Career assessments"
-              className="featured-image shadow-xl"
             />
+          </div>
 
+          {/* Main Content */}
+          <main className="service-main-content">
             <section className="service-intro mb-12">
               <h2>{service.shortDescription}</h2>
               <p className="text-xl text-gray-700 mb-8">
@@ -136,6 +111,43 @@ const CareerAssessments = () => {
                     )}
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* Sample Reports Section - Moved from Sidebar */}
+            <section className="resources-section mb-12">
+              <h3>Sample Reports</h3>
+              <div className="resources-grid">
+                <a
+                  href="#"
+                  className="download-item"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <div className="download-icon">PDF</div>
+                  <div className="download-info">
+                    <span className="download-name">
+                      Sample Strength Report
+                    </span>
+                    <span className="download-size">PDF (3.2 MB)</span>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            {/* Ready to Begin CTA - Moved from Sidebar */}
+            <section className="help-cta-section">
+              <div className="help-cta-box">
+                <h3>Ready to Begin?</h3>
+                <p>Get scientific clarity on your career path today.</p>
+                <Button
+                  variant="premium"
+                  size="large"
+                  onClick={() =>
+                    (window.location.href = "/products/assessments")
+                  }
+                >
+                  View All Assessments
+                </Button>
               </div>
             </section>
           </main>

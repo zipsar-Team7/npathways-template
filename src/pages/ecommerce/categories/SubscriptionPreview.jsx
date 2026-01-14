@@ -1,65 +1,109 @@
-import React from 'react';
-import { upcomingSubscriptions } from '../../../data/products';
-import Button from '../../../components/common/Button';
-import Card from '../../../components/common/Card';
-import './CategoryPages.css';
+import React from "react";
+import { upcomingSubscriptions } from "../../../data/products";
+import Button from "../../../components/common/Button";
+import ProductSidebar from "./ProductSidebar";
+import "./CategoryPages.css";
 
 const SubscriptionPreview = () => {
   return (
-    <div className="product-category-page subscriptions-list fade-in">
-      <section className="section category-hero bg-gray">
-        <div className="container text-center">
-          <span className="category-tag bg-gray-400">Phase 5: Continuity</span>
-          <h1>Mentorship <span className="text-primary">Subscriptions</span></h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Long-term continuity and priority access for students who want to stay connected 
-            to the global industry and academic network.
+    <div className="product-category-page fade-in">
+      {/* Hero */}
+      <section className="bg-gray-50 py-20 text-center border-b border-gray-100">
+        <div className="container">
+          <h1 className="text-5xl font-bold mb-4">Subscriptions</h1>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Long-term continuity and priority access for students who want to
+            stay connected to the global industry and academic network.
           </p>
         </div>
       </section>
 
-      <section className="section">
+      <section className="service-single-layout">
         <div className="container">
-          <div className="coming-soon-banner p-12 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200 text-center mb-16">
-            <span className="text-xl font-bold text-gray-400 block mb-4 uppercase tracking-[0.2em]">Coming Soon</span>
-            <p className="max-w-xl mx-auto text-gray-500">
-              We are finalizing our subscription models to ensure they provide maximum value 
-              throughout your international education and career.
-            </p>
-          </div>
+          <ProductSidebar />
 
-          <div className="product-grid opacity-60 pointer-events-none grayscale">
-            {upcomingSubscriptions.map(item => (
-              <Card key={item.id} className="guided-product-card p-8 bg-white border border-gray-100">
-                <span className="text-xs font-bold text-gray-300 uppercase mb-4 block">Planned Offering</span>
-                <h3 className="mb-4">{item.name}</h3>
-                <p className="text-sm text-gray-500 mb-8">{item.description}</p>
-                
-                <ul className="check-list mb-8">
-                  {item.features.map((f, i) => (
-                    <li key={i}>{f}</li>
-                  ))}
-                </ul>
+          <div className="category-content">
+            {/* Coming Soon Banner */}
+            <div className="coming-soon-banner">
+              <span className="coming-soon-badge">Coming Soon</span>
+              <h2 className="text-2xl font-bold mb-4">
+                Subscription Plans Under Development
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+                We are finalizing our subscription models to ensure they provide
+                maximum value throughout your international education and career
+                journey.
+              </p>
+            </div>
 
-                <Button variant="outline" disabled fullWidth>
-                  Check Availability Later
+            {/* Preview Cards */}
+            <div className="subscription-preview-grid">
+              {upcomingSubscriptions.map((item) => (
+                <div key={item.id} className="subscription-preview-card">
+                  <span className="preview-badge">Planned Offering</span>
+                  <h3 className="text-xl font-bold mb-3">{item.name}</h3>
+                  <p className="text-gray-600 mb-6 text-sm">
+                    {item.description}
+                  </p>
+
+                  <div className="feature-list-preview mb-6">
+                    {item.features.map((f, i) => (
+                      <div key={i} className="feature-item">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className="text-gray-400"
+                        >
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="premium-outline"
+                    size="small"
+                    disabled
+                    fullWidth
+                  >
+                    Coming Soon
+                  </Button>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Section */}
+            <div className="contact-cta-box">
+              <h3>Want to be notified?</h3>
+              <p>
+                Join the waitlist to receive an update when our subscription
+                plans go live.
+              </p>
+              <div className="cta-buttons">
+                <Button
+                  variant="premium"
+                  size="large"
+                  onClick={() =>
+                    alert(
+                      "Notification request recorded. We'll notify you when subscriptions are available!"
+                    )
+                  }
+                >
+                  Notify Me When Available
                 </Button>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <h3 className="mb-6">Want to be notified?</h3>
-            <p className="text-gray-600 mb-8">
-              Join the waitlist to receive an update when our subscription plans go live.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Button variant="primary" onClick={() => alert('Notification request recorded.')}>
-                Notify Me When Available
-              </Button>
-              <Button variant="outline" onClick={() => window.location.href='/products'}>
-                Explore Current Products
-              </Button>
+                <Button
+                  variant="premium-outline"
+                  size="large"
+                  onClick={() => (window.location.href = "/products")}
+                >
+                  Explore Current Products
+                </Button>
+              </div>
             </div>
           </div>
         </div>

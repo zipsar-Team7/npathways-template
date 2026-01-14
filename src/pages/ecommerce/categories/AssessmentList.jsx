@@ -13,9 +13,6 @@ const AssessmentList = () => {
       {/* Hero */}
       <section className="bg-gray-50 py-20 text-center border-b border-gray-100">
         <div className="container">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 block">
-            Phase 1
-          </span>
           <h1 className="text-5xl font-bold mb-4">Assessments</h1>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Scientific profiling to identify your natural strengths.

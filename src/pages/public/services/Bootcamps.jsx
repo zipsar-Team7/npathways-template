@@ -53,43 +53,18 @@ const Bootcamps = () => {
                 ))}
               </ul>
             </div>
-
-            <div className="sidebar-widget">
-              <h3 className="widget-title">Upcoming Calendars</h3>
-              <a
-                href="#"
-                className="download-item"
-                onClick={(e) => e.preventDefault()}
-              >
-                <div className="download-icon">PDF</div>
-                <div className="download-info">
-                  <span className="download-name">Spring 2024 Schedule</span>
-                  <span className="download-size">PDF (1.8 MB)</span>
-                </div>
-              </a>
-            </div>
-
-            <div className="sidebar-widget contact-widget">
-              <h3 className="widget-title">Join a Batch</h3>
-              <p>Slots are limited per cohort. Register interest early.</p>
-              <Button
-                variant="outline"
-                fullWidth
-                onClick={() => (window.location.href = "/products/bootcamps")}
-              >
-                View Active Bootcamps
-              </Button>
-            </div>
           </aside>
 
-          {/* Main Content */}
-          <main className="service-main-content">
+          {/* Fixed Image Panel */}
+          <div className="service-image-panel">
             <img
               src="https://picsum.photos/seed/bootcamp/800/500"
               alt="Accelerated bootcamps"
-              className="featured-image shadow-xl"
             />
+          </div>
 
+          {/* Main Content */}
+          <main className="service-main-content">
             <section className="service-intro mb-12">
               <h2>{service.shortDescription}</h2>
               <p className="text-xl text-gray-700 mb-8">
@@ -136,6 +111,39 @@ const Bootcamps = () => {
                     )}
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* Upcoming Calendars Section - Moved from Sidebar */}
+            <section className="resources-section mb-12">
+              <h3>Upcoming Calendars</h3>
+              <div className="resources-grid">
+                <a
+                  href="#"
+                  className="download-item"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <div className="download-icon">PDF</div>
+                  <div className="download-info">
+                    <span className="download-name">Spring 2024 Schedule</span>
+                    <span className="download-size">PDF (1.8 MB)</span>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            {/* Join a Batch CTA - Moved from Sidebar */}
+            <section className="help-cta-section">
+              <div className="help-cta-box">
+                <h3>Join a Batch</h3>
+                <p>Slots are limited per cohort. Register interest early.</p>
+                <Button
+                  variant="premium"
+                  size="large"
+                  onClick={() => (window.location.href = "/products/bootcamps")}
+                >
+                  View Active Bootcamps
+                </Button>
               </div>
             </section>
           </main>

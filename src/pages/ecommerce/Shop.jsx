@@ -7,7 +7,7 @@ const Shop = () => {
     {
       id: "assessments",
       name: "Assessments",
-      tag: "Phase 1: Assess",
+      tag: "Assess",
       description:
         "Scientific map of cognitive patterns and personality traits to identify natural strengths. Start your journey with data, not best guesses.",
       link: "/products/assessments",
@@ -18,7 +18,7 @@ const Shop = () => {
     {
       id: "bootcamps",
       name: "Bootcamps",
-      tag: "Phase 2: Accelerate",
+      tag: "Accelerate",
       description:
         "Intensive accelerators designed to build specific readiness dimensions in record time. Close skill gaps with targeted intervention.",
       link: "/products/bootcamps",
@@ -29,7 +29,7 @@ const Shop = () => {
     {
       id: "programs",
       name: "Programs",
-      tag: "Phase 3: Execute",
+      tag: "Execute",
       description:
         "Mid-term structured engagements focused on building core transition competencies over 3-6 months. Direct mentorship and tracking.",
       link: "/products/programs",
@@ -40,7 +40,7 @@ const Shop = () => {
     {
       id: "pathways",
       name: "Full Pathways",
-      tag: "Phase 4: Complete Guidance",
+      tag: "Complete Guidance",
       description:
         "End-to-end guided journey from assessment to enrollment in top-tier global institutions. Our flagship all-inclusive service.",
       link: "/products/pathways",
@@ -142,7 +142,7 @@ const Shop = () => {
               <h2>The Product Logic</h2>
               <p>
                 We don't sell generic courses. We build productized
-                interventions. Each category represents a specific phase of the
+                interventions. Each category represents a specific stage of the
                 student lifecycle, optimized for maximum impact in minimum time.
               </p>
 
@@ -190,7 +190,7 @@ const Shop = () => {
             Take our initial readiness check to see which assessment or program
             fits your current stage.
           </p>
-          <div className="flex justify-center gap-6">
+          <div className="shop-cta-buttons">
             <Button
               variant="premium"
               size="large"
