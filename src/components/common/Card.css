@@ -1,24 +1,80 @@
+/* Card Component - Simple Solid Design */
+
 .card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-xl);
+  background: #F5F5F5;
+  border: 1px solid #E8E8E8;
+  border-radius: var(--radius-2xl);
   padding: var(--spacing-6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all var(--transition-base);
 }
 
-.card-default {
-  box-shadow: var(--shadow-sm);
+.card:hover {
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  margin-bottom: var(--spacing-4);
+}
+
+.card-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.card-body {
+  color: var(--color-text-secondary);
+}
+
+.card-footer {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* Card Variants */
+.card-elevated {
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card-flat {
+  background: #F5F5F5;
+  box-shadow: none;
+  border: 1px solid #E8E8E8;
 }
 
 .card-bordered {
-  border: 1px solid var(--color-gray-200);
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: none;
 }
 
-.card-elevated {
-  box-shadow: var(--shadow-lg);
+/* Compact Card */
+.card-compact {
+  padding: var(--spacing-4);
 }
 
-.card-hoverable:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  cursor: pointer;
+/* List Card */
+.card-list {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-list-item {
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background var(--transition-base);
+}
+
+.card-list-item:last-child {
+  border-bottom: none;
+}
+
+.card-list-item:hover {
+  background: #FFFFFF;
 }

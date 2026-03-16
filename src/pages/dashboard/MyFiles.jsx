@@ -33,18 +33,35 @@ const MyFiles = () => {
   return (
     <div className="my-files-page fade-in">
       <div className="page-header mb-6">
-        <h1>My Documents</h1>
-        <p className="text-gray-600">Upload and manage your application documents securely.</p>
+        <h1 style={{ color: 'var(--color-text-primary)' }}>My Documents</h1>
+        <p style={{ color: 'var(--color-text-secondary)' }}>Upload and manage your application documents securely.</p>
       </div>
 
       <div className="grid-layout" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
         <div className="upload-section">
-          <h2 className="text-lg mb-4 font-semibold">Upload New</h2>
+          <h2 className="text-lg mb-4 font-semibold" style={{ color: 'var(--color-text-primary)', fontSize: 'var(--font-size-xl)', marginBottom: 'var(--spacing-4)' }}>Upload New</h2>
           <FileUploader onUpload={handleUpload} />
           
-          <div className="upload-guidelines mt-6 bg-blue-50 p-4 rounded-lg" style={{ backgroundColor: '#EFF6FF', padding: '1rem', borderRadius: '0.5rem' }}>
-            <h3 className="text-sm font-bold text-blue-800 mb-2">Document Guidelines</h3>
-            <ul className="text-sm text-blue-700 space-y-1 list-disc pl-4" style={{ fontSize: '0.875rem', lineHeight: '1.5', paddingLeft: '1rem' }}>
+          <div className="upload-guidelines mt-6" style={{ 
+            background: 'rgba(191, 255, 153, 0.08)',
+            padding: 'var(--spacing-5)',
+            borderRadius: 'var(--radius-xl)',
+            border: '1px solid rgba(191, 255, 153, 0.2)',
+            marginTop: 'var(--spacing-6)'
+          }}>
+            <h3 style={{ 
+              fontSize: 'var(--font-size-base)',
+              fontWeight: 'var(--font-weight-bold)',
+              color: 'var(--color-brand-primary)',
+              marginBottom: 'var(--spacing-3)'
+            }}>Document Guidelines</h3>
+            <ul style={{ 
+              fontSize: 'var(--font-size-sm)',
+              lineHeight: '1.8',
+              paddingLeft: 'var(--spacing-5)',
+              color: 'var(--color-text-secondary)',
+              listStyle: 'disc'
+            }}>
               <li>Ensure scans are clear and readable</li>
               <li>Max file size: 5MB per file</li>
               <li>Supported formats: PDF, JPG, PNG</li>

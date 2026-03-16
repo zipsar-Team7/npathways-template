@@ -1,23 +1,25 @@
-import './Button.css';
-import PropTypes from 'prop-types';
+import "./Button.css";
+import PropTypes from "prop-types";
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'medium', 
-  onClick, 
-  type = 'button',
+const Button = ({
+  children,
+  variant = "primary",
+  size = "medium",
+  onClick,
+  type = "button",
   disabled = false,
   fullWidth = false,
-  className = ''
+  className = "",
 }) => {
   const classNames = [
-    'btn',
+    "btn",
     `btn-${variant}`,
     `btn-${size}`,
-    fullWidth ? 'btn-full' : '',
-    className
-  ].filter(Boolean).join(' ');
+    fullWidth ? "btn-full" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <button
@@ -33,13 +35,20 @@ const Button = ({
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'outline', 'ghost']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  variant: PropTypes.oneOf([
+    "primary",
+    "secondary",
+    "outline",
+    "ghost",
+    "premium",
+    "premium-outline",
+  ]),
+  size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Button;

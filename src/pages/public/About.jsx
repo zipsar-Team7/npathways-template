@@ -1,77 +1,319 @@
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import './About.css';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./about/AboutGeneral.css";
 
 const About = () => {
-  const team = [
-    { name: "Principal Consultant", role: "Overseas Education Expert", image: "https://placehold.co/150x150/00C194/FFFFFF?text=PC" },
-    { name: "Senior Counselor", role: "Visa Specialist", image: "https://placehold.co/150x150/1E3A8A/FFFFFF?text=SC" },
-    { name: "Student Success Lead", role: "Post-Arrival Support", image: "https://placehold.co/150x150/FCD34D/333333?text=SSL" }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const leadership = [
+    {
+      name: "Rajiv",
+      role: "Founder & CEO",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+      link: "/about/founder",
+    },
+    {
+      name: "Sarah Johnson",
+      role: "Head of Counseling",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
+      link: "#",
+    },
+    {
+      name: "Vikram Mehta",
+      role: "Visa Strategist",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+      link: "#",
+    },
+    {
+      name: "Elena Rossi",
+      role: "Global Partnerships",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+      link: "#",
+    },
   ];
 
   return (
-    <div className="about-page fade-in">
-      {/* Hero */}
-      <section className="section bg-gray about-hero">
-        <div className="container text-center">
-          <h1 className="mb-4">Empowering <span className="text-primary">Global Ambitions</span></h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            We are more than just education consultants. We are career architects helping students build their future across borders.
+    <div className="about-shared-page">
+      {/* Hero Section */}
+      <section
+        className="about-hero-minimal"
+        style={{ backgroundColor: "#000", color: "#fff", padding: "10rem 0" }}
+      >
+        <div className="about-container">
+          <div className="breadcrumbs" style={{ color: "#888" }}>
+            Home / About Us
+          </div>
+          <h1 style={{ color: "#fff" }}>
+            The Institute of <br /> <span>Global Pathways</span>
+          </h1>
+          <p
+            style={{
+              color: "#888",
+              maxWidth: "600px",
+              margin: "2rem auto",
+              fontSize: "1.2rem",
+            }}
+          >
+            A premium educational consultancy dedicated to transforming
+            ambitious dreams into international realities.
           </p>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="section">
-        <div className="container">
-          <div className="mission-grid">
-            <div className="mission-content">
-              <h2>Our Mission</h2>
-              <p>
-                To provide transparent, ethical, and personalized guidance to students aspiring for global education, ensuring they not only get admitted but thrive in their new environment.
-              </p>
-              <div className="methodology-box mt-4">
-                <h3>Our Methodology</h3>
-                <ul className="feature-list">
-                  <li><strong>Clarity Compass™:</strong> Scientific psychometric assessments to find the right career fit.</li>
-                  <li><strong>Failing Forward™:</strong> Building resilience and growth mindset in students.</li>
-                  <li><strong>Kaizen Culture:</strong> Continuous improvement in our processes and support.</li>
-                </ul>
-              </div>
+      {/* Intro Section - Split Layout */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-2">
+            <div>
+              <span className="badge">Our Identity</span>
+              <h2 style={{ fontSize: "3rem", margin: "1.5rem 0" }}>
+                Committed to Your Success
+              </h2>
             </div>
-            <div className="mission-image">
-              <img src="https://placehold.co/600x400/00C194/FFFFFF?text=Our+Mission" alt="Mission" className="rounded-xl shadow-lg" />
+            <div>
+              <p
+                style={{
+                  color: "#555",
+                  fontSize: "1.2rem",
+                  lineHeight: "1.8",
+                  marginBottom: "2rem",
+                }}
+              >
+                Zipway is a premium study abroad consultancy operated by
+                Skillinum Falcon LLP. We provide end-to-end support for students
+                aiming for world-class universities, blending scientific
+                assessments with human-centric mentorship.
+              </p>
+              <Link to="/about/how-it-works" className="about-btn-premium">
+                Explore our 10-Step Journey
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="section bg-gray">
-        <div className="container">
-          <h2 className="text-center mb-12">Meet Our Team</h2>
-          <div className="team-grid">
-            {team.map((member, index) => (
-              <Card key={index} className="team-card text-center">
-                <img src={member.image} alt={member.name} className="team-image" />
-                <h3>{member.name}</h3>
-                <p className="text-primary font-medium">{member.role}</p>
-              </Card>
+      {/* Statistics Grid */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-3" style={{ textAlign: "center" }}>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                30K
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Students Guided
+              </span>
+            </div>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                100%
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Personal Advice
+              </span>
+            </div>
+            <div>
+              <span
+                style={{
+                  fontSize: "4rem",
+                  fontWeight: "800",
+                  display: "block",
+                }}
+              >
+                18
+              </span>
+              <span
+                style={{
+                  color: "#888",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                }}
+              >
+                Years Experience
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-section-header">
+            <span className="badge">Leadership Team</span>
+            <h2>Guided by Experts</h2>
+            <p>
+              Our team consists of industry veterans who have walked the path
+              themselves.
+            </p>
+          </div>
+
+          <div className="about-grid-4">
+            {leadership.map((member, i) => (
+              <div key={i} className="team-card">
+                <div className="team-card-content">
+                  <div
+                    style={{
+                      aspectRatio: "1/1",
+                      borderRadius: "12px",
+                      overflow: "hidden",
+                      marginBottom: "1.5rem",
+                      border: "1px solid #eee",
+                    }}
+                  >
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        filter: "grayscale(100%)",
+                      }}
+                    />
+                  </div>
+                  <div className="team-card-info">
+                    <h4 style={{ margin: "0.5rem 0" }}>{member.name}</h4>
+                    <p
+                      style={{
+                        color: "#888",
+                        fontSize: "0.9rem",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      {member.role}
+                    </p>
+                  </div>
+                  {member.link !== "#" && (
+                    <div style={{ marginTop: "auto" }}>
+                      <Link
+                        to={member.link}
+                        style={{
+                          color: "#000",
+                          fontSize: "0.8rem",
+                          fontWeight: "bold",
+                          textDecoration: "none",
+                          borderBottom: "1px solid #000",
+                        }}
+                      >
+                        View Bio
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section bg-primary text-white text-center">
-        <div className="container">
-          <h2 className="text-white mb-4">Join the Success Story</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-white opacity-90">
-            With over 98% visa success rate and 500+ successful placements, your global career starts here.
-          </p>
-          <Button variant="secondary" size="large" onClick={() => window.location.href='/contact'}>
-            Talk to an Expert
-          </Button>
+      {/* Partners Banner */}
+      <section
+        style={{
+          padding: "6rem 0",
+          borderTop: "1px solid #f0f0f0",
+          borderBottom: "1px solid #f0f0f0",
+        }}
+      >
+        <div className="about-container">
+          <div className="partners-banner-grid">
+            {/* Logo placeholders with improved grid distribution */}
+            <div className="partner-logo-item">UNIVERSITY PARTNER</div>
+            <div className="partner-logo-item">GLOBAL ACCREDITED</div>
+            <div className="partner-logo-item">EDUCATION FIRST</div>
+            <div className="partner-logo-item">CAREER HUB</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section style={{ padding: "8rem 0" }}>
+        <div className="about-container">
+          <div className="about-grid-2">
+            <div
+              style={{
+                backgroundColor: "#000",
+                borderRadius: "20px",
+                overflow: "hidden",
+                color: "#fff",
+              }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+                alt="Philosophy"
+                style={{
+                  width: "100%",
+                  height: "300px",
+                  objectFit: "cover",
+                  filter: "grayscale(100%) brightness(0.7)",
+                }}
+              />
+              <div style={{ padding: "3rem" }}>
+                <h3>Mission First</h3>
+                <p style={{ color: "#888", marginTop: "1rem" }}>
+                  We measure our success by the success of our students, not by
+                  university commissions.
+                </p>
+              </div>
+            </div>
+            <div
+              style={{
+                border: "1px solid #f0f0f0",
+                borderRadius: "20px",
+                padding: "3rem",
+              }}
+            >
+              <span
+                className="badge"
+                style={{ backgroundColor: "#f0f0f0", color: "#000" }}
+              >
+                Transparency
+              </span>
+              <h3 style={{ marginTop: "2rem" }}>No Hidden Agendas</h3>
+              <p
+                style={{ color: "#555", marginTop: "1rem", lineHeight: "1.8" }}
+              >
+                Our counseling is data-driven and objective. We use our Clarity
+                Compass™ to ensure your chosen course aligns with reality, not
+                just dreams.
+              </p>
+              <ul style={{ padding: 0, listStyle: "none", marginTop: "2rem" }}>
+                <li style={{ marginBottom: "1rem" }}>✓ Neutral Advisory</li>
+                <li style={{ marginBottom: "1rem" }}>
+                  ✓ Ethics-Led Documentation
+                </li>
+                <li style={{ marginBottom: "1rem" }}>
+                  ✓ Post-Arrival Integrity
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>

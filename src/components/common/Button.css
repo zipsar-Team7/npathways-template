@@ -35,50 +35,92 @@
 }
 
 /* Variants */
+.btn:hover:not(:disabled) {
+  background: #FFFFFF;
+  border-color: #000000;
+}
+
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-brand-primary);
   color: var(--color-white);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+  background-color: #F5F5F5;
+  color: #000000;
+  border: 1px solid #E8E8E8;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #1E40AF;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background-color: #FFFFFF;
+  border-color: #000000;
 }
 
 .btn-outline {
   background-color: transparent;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 2px solid var(--color-brand-primary);
+  color: var(--color-brand-primary);
 }
 
 .btn-outline:hover:not(:disabled) {
-  background-color: var(--color-primary);
+  background-color: var(--color-brand-primary);
   color: var(--color-white);
   transform: translateY(-2px);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
 }
 
 .btn-ghost:hover:not(:disabled) {
   background-color: var(--color-gray-100);
+  color: var(--color-text-primary);
 }
 
 /* Full Width */
 .btn-full {
   width: 100%;
+}
+
+/* Premium Variant */
+.btn-premium {
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+}
+
+.btn-premium:hover:not(:disabled) {
+  background-color: #333333;
+  border-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Premium Outline Variant */
+.btn-premium-outline {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+}
+
+.btn-premium-outline:hover:not(:disabled) {
+  background-color: #000000;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }

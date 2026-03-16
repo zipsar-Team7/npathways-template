@@ -10,7 +10,7 @@ const Terms = () => {
         <div className="legal-content">
           <section>
             <h2>1. Introduction</h2>
-            <p>Welcome to NPathways Global ("Company", "we", "our", "us"). These Terms and Conditions ("Terms") govern your use of our website located at npathways.world and npathways.global (together or individually "Service") operated by <strong>Skillinum Falcon LLP</strong>.</p>
+            <p>Welcome to Zipway Global ("Company", "we", "our", "us"). These Terms and Conditions ("Terms") govern your use of our website located at zipway.world and zipway.global (together or individually "Service") operated by <strong>Skillinum Falcon LLP</strong>.</p>
             <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
           </section>
 
@@ -21,7 +21,7 @@ const Terms = () => {
 
           <section>
             <h2>3. Intellectual Property</h2>
-            <p>The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of NPathways Global and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries.</p>
+            <p>The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Zipway Global and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries.</p>
           </section>
 
           <section>
@@ -33,7 +33,7 @@ const Terms = () => {
             <h2>5. Disclaimer of Warranties; Limitation of Liability</h2>
             <p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free. We do not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
             <p className="highlight-box">
-              <strong>Notice regarding Visa and Admissions:</strong> NPathways Global provides guidance and documentation support. We do not guarantee visa approval or university admission, as these decisions are at the sole discretion of the respective authorities.
+              <strong>Notice regarding Visa and Admissions:</strong> Zipway Global provides guidance and documentation support. We do not guarantee visa approval or university admission, as these decisions are at the sole discretion of the respective authorities.
             </p>
           </section>
 
@@ -44,7 +44,7 @@ const Terms = () => {
 
           <section>
             <h2>7. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at info@npathways.global.</p>
+            <p>If you have any questions about these Terms, please contact us at info@zipway.global.</p>
           </section>
         </div>
       </div>

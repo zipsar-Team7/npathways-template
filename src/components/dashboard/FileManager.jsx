@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Button from '../common/Button';
-import './FileManager.css';
+import { useState } from "react";
+import Button from "../common/Button";
+import "./FileManager.css";
 
 const FileManager = ({ files, onDelete }) => {
   if (!files || files.length === 0) {
@@ -18,7 +18,7 @@ const FileManager = ({ files, onDelete }) => {
         {files.map((file) => (
           <div key={file.id} className="file-item">
             <div className="file-icon">
-              {file.type.includes('pdf') ? '📄' : '🖼️'}
+              {file.type.includes("pdf") ? "PDF" : "IMG"}
             </div>
             <div className="file-info">
               <span className="file-name">{file.name}</span>
@@ -27,11 +27,20 @@ const FileManager = ({ files, onDelete }) => {
               </span>
             </div>
             <div className="file-actions">
-              <Button variant="ghost" size="small" onClick={() => alert(`Downloading ${file.name}`)}>
-                ⬇
+              <Button
+                variant="ghost"
+                size="small"
+                onClick={() => alert(`Downloading ${file.name}`)}
+              >
+                Download
               </Button>
-              <Button variant="ghost" size="small" className="text-error" onClick={() => onDelete(file.id)}>
-                🗑️
+              <Button
+                variant="ghost"
+                size="small"
+                className="text-error"
+                onClick={() => onDelete(file.id)}
+              >
+                Delete
               </Button>
             </div>
           </div>

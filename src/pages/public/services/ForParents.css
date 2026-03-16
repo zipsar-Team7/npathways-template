@@ -1,0 +1,19 @@
+.for-parents .services-hero {
+  background: white;
+  padding-top: var(--spacing-20);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.for-parents .role-box {
+  margin-top: var(--spacing-8);
+}
+
+.catalog-section {
+  background: white;
+}
+
+@media (max-width: 900px) {
+  .for-parents .services-hero {
+    text-align: center;
+  }
+}

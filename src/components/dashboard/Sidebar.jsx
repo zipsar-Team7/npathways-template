@@ -13,10 +13,10 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   const menuItems = [
-    { path: '/dashboard', label: 'Overview', icon: '📊', exact: true },
-    { path: '/dashboard/my-products', label: 'My Products', icon: '📦' },
-    { path: '/dashboard/my-files', label: 'My Files', icon: '📂' },
-    { path: '/dashboard/profile', label: 'Profile', icon: '👤' },
+    { path: '/dashboard', label: 'Overview', icon: '[O]', exact: true },
+    { path: '/dashboard/my-products', label: 'My Products', icon: '[P]' },
+    { path: '/dashboard/my-files', label: 'My Files', icon: '[F]' },
+    { path: '/dashboard/profile', label: 'Profile', icon: '[U]' },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       <div className={`sidebar-overlay ${isOpen ? 'show' : ''}`} onClick={onClose}></div>
       <aside className={`dashboard-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <div className="sidebar-logo">NPathways</div>
+          <div className="sidebar-logo">Zipway</div>
           <button className="close-sidebar-btn" onClick={onClose}>✕</button>
         </div>
         
@@ -48,7 +48,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
         <div className="sidebar-footer">
           <button className="logout-btn" onClick={handleLogout}>
-            <span className="nav-icon">🚪</span>
+            <span className="nav-icon">&gt;</span>
             <span className="nav-label">Logout</span>
           </button>
         </div>

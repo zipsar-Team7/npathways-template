@@ -1,0 +1,402 @@
+/* Service Details Layout - Replicating e.visa coaching-single structure in B&W */
+
+.service-detail-page {
+  padding-top: 80px;
+  padding-bottom: 5rem;
+  background-color: #fff;
+}
+
+/* Hero / Breadcrumb Section */
+.service-hero {
+  padding: 4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4rem;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #000;
+}
+
+/* Split Layout - Similar to ProductDetail */
+/* Split Layout - Modified for Image Top / Content Bottom */
+.service-layout-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  align-items: start;
+  gap: 0;
+  min-height: auto;
+}
+
+/* SIDEBAR */
+.service-sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom scrollbar for sidebar */
+.service-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.service-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.service-sidebar::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.service-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.sidebar-widget {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.widget-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+}
+
+/* Navigation Widget */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-radius: 0.75rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav-link:hover, 
+.sidebar-nav-link.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Download Widget */
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #919191;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s;
+}
+
+.download-item:hover {
+  border-color: #000;
+}
+
+.download-icon {
+  font-size: 1.5rem;
+}
+
+.download-info span {
+  display: block;
+}
+
+.download-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.download-size {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* Contact Widget */
+.contact-widget {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-widget .widget-title {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+
+.contact-widget p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* Fixed Image Panel - Now Top Row of Main Column */
+.service-image-panel {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  top: 0;
+  height: 400px;
+  background: #f5f5f5;
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+  margin-right: 2rem; /* Add margin to separate from edge if needed, matching padding */
+  margin-top: 2rem;
+}
+
+.service-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+/* MAIN CONTENT - Now Bottom Row of Main Column */
+.service-main-content {
+  grid-column: 2;
+  grid-row: 2;
+  background: #fff;
+  overflow-y: visible; /* Regular scrolling */
+  padding: 3rem;
+  height: auto;
+}
+
+/* Remove old featured-image class since image is now in panel */
+.service-main-content .featured-image {
+  display: none;
+}
+
+.service-main-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-main-content p {
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.benefit-card {
+  padding: 2rem;
+  background: #fcfcfc;
+  border-left: 4px solid #000;
+}
+
+.benefit-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.benefit-card p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* FAQ Accordion */
+.faq-section {
+  margin-top: 4rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Resources Section (moved from sidebar) */
+.resources-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: #f9f9f9;
+  border-radius: 1.5rem;
+}
+
+.resources-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Help CTA Section (moved from sidebar) */
+.help-cta-section {
+  margin-top: 3rem;
+}
+
+.help-cta-box {
+  background: #000;
+  color: #fff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.help-cta-box h3 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.help-cta-box p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .service-layout-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0;
+  }
+  
+  .service-sidebar {
+    grid-column: 1;
+    grid-row: auto;
+    order: -2; /* Move sidebar to top on mobile */
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+    padding-top: 0;
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+    border-top: none;
+  }
+  
+  .service-image-panel {
+    grid-column: 1;
+    grid-row: auto;
+    position: relative;
+    top: 0;
+    height: 300px;
+    order: -1; /* Image below sidebar */
+    margin-right: 0;
+    margin-top: 0;
+    border-radius: 0;
+  }
+  
+  .service-main-content {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 2rem;
+    order: 0;
+  }
+
+  .service-hero {
+    padding: 1rem 0;
+    margin-bottom: 0;
+  }
+
+  .sidebar-widget {
+    padding: 1.5rem;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .sidebar-widget .widget-title {
+    border-bottom: none;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive for new main content sections */
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resources-section,
+  .help-cta-box {
+    padding: 2rem;
+  }
+  
+  .help-cta-box h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-image-panel {
+    height: 40vh;
+  }
+  
+  .service-main-content {
+    padding: 1.5rem;
+  }
+}
+

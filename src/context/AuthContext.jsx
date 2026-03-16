@@ -5,8 +5,8 @@ const AuthContext = createContext();
 
 // Mock users for demonstration
 const mockUsers = [
-  { id: 1, email: 'student@npathways.com', password: 'password123', name: 'John Doe' },
-  { id: 2, email: 'demo@npathways.com', password: 'demo123', name: 'Demo User' }
+  { id: 1, email: 'student@zipway.com', password: 'password123', name: 'John Doe' },
+  { id: 2, email: 'demo@zipway.com', password: 'demo123', name: 'Demo User' }
 ];
 
 export const AuthProvider = ({ children }) => {
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   // Check for existing session on mount
   useEffect(() => {
-    const storedUser = localStorage.getItem('npathways_user');
+    const storedUser = localStorage.getItem('zipway_user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
         if (foundUser) {
           const { password: _, ...userWithoutPassword } = foundUser;
           setUser(userWithoutPassword);
-          localStorage.setItem('npathways_user', JSON.stringify(userWithoutPassword));
+          localStorage.setItem('zipway_user', JSON.stringify(userWithoutPassword));
           resolve(userWithoutPassword);
         } else {
           reject(new Error('Invalid email or password'));
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
         
         mockUsers.push({ ...newUser, password });
         setUser(newUser);
-        localStorage.setItem('npathways_user', JSON.stringify(newUser));
+        localStorage.setItem('zipway_user', JSON.stringify(newUser));
         resolve(newUser);
       }, 500);
     });
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('npathways_user');
+    localStorage.removeItem('zipway_user');
   };
 
   const value = {

@@ -1,0 +1,130 @@
+.common-data-section {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.philosophy-list {
+  list-style: none;
+  padding: 0;
+}
+
+.philosophy-list li {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-6);
+  position: relative;
+}
+
+.philosophy-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-brand-primary);
+  font-weight: bold;
+}
+
+.outcome-metrics {
+  display: flex;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-value {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+}
+
+.metric-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.catalogue-category {
+  margin-bottom: var(--spacing-12);
+}
+
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.catalogue-card {
+  padding: var(--spacing-6);
+  border: 1px solid var(--color-gray-200);
+  transition: all var(--transition-base);
+}
+
+.catalogue-type {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-2);
+}
+
+.catalogue-card h4 {
+  margin-bottom: var(--spacing-3);
+  font-size: var(--font-size-lg);
+}
+
+.readiness-framework {
+  margin: var(--spacing-12) 0;
+}
+
+.framework-pillar {
+  text-align: center;
+  padding: var(--spacing-6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+}
+
+.pillar-index {
+  font-size: var(--font-size-xs);
+  font-family: monospace;
+  color: var(--color-gray-400);
+  margin-bottom: var(--spacing-4);
+}
+
+.framework-pillar h3 {
+  margin-bottom: var(--spacing-4);
+  color: var(--color-white);
+}
+
+.framework-pillar p {
+  color: var(--color-gray-400);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  padding: 0;
+  font-size: var(--font-size-sm);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .outcome-metrics {
+    justify-content: center;
+  }
+}

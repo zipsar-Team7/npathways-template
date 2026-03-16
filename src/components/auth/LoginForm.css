@@ -1,42 +1,121 @@
-/* Login Form Styles */
+/* Login Form Styles - Dark Theme */
 
 .login-card {
-  background-color: var(--color-white);
-  padding: var(--spacing-8);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  background: var(--color-white);
+  padding: var(--spacing-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-gray-200);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
+  position: relative;
+}
+
+.login-card h2 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-size-3xl);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-5);
+}
+
+.form-group label {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-2);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+  background: var(--color-white);
 }
 
 .error-alert {
-  background-color: #FEF2F2;
-  color: var(--color-error);
-  padding: var(--spacing-3);
-  border-radius: var(--radius-md);
+  background: #FEF2F2;
+  color: #991B1B;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-4);
   font-size: var(--font-size-sm);
-  border: 1px solid #FECACA;
+  border: 1px solid #F87171;
 }
 
 .login-footer {
   margin-top: var(--spacing-6);
   text-align: center;
   font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
+}
+
+.login-footer p {
+  margin-bottom: var(--spacing-2);
 }
 
 .login-footer a {
   font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  transition: color var(--transition-fast);
+}
+
+.login-footer a:hover {
+  color: var(--color-brand-primary-dark);
+  text-decoration: underline;
 }
 
 .demo-hint {
   margin-top: var(--spacing-4);
   font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
+  color: var(--color-text-secondary);
   font-family: monospace;
-  background-color: var(--color-gray-50);
-  padding: var(--spacing-2);
-  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+  line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    padding: var(--spacing-5);
+    max-width: 100%;
+    margin: 0;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .login-card h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-4);
+    text-align: left; /* Often looks better on mobile than center */
+  }
+
+  /* Make inputs easier to tap */
+  .form-input {
+    padding: var(--spacing-3);
+    font-size: 16px; /* Prevents auto-zoom on iOS */
+  }
 }

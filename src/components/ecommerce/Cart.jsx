@@ -37,7 +37,7 @@ const Cart = () => {
             <div className="empty-cart">
               <span className="empty-icon">🛒</span>
               <p>Your cart is empty</p>
-              <Button variant="outline" onClick={toggleCart}>
+              <Button variant="outline" fullWidth onClick={() => { toggleCart(); navigate('/products'); }}>
                 Continue Shopping
               </Button>
             </div>
@@ -45,7 +45,7 @@ const Cart = () => {
             cartItems.map(item => (
               <div key={item.id} className="cart-item">
                 <div className="item-image">
-                  <img src={`https://placehold.co/100x100/00C194/FFFFFF?text=${item.name.charAt(0)}`} alt={item.name} />
+                  <img src={`https://placehold.co/100x100/F5F5F5/000000?text=${item.name.charAt(0)}`} alt={item.name} />
                 </div>
                 <div className="item-details">
                   <h4>{item.name}</h4>

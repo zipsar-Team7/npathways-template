@@ -1,0 +1,22 @@
+.assessment-hero {
+  padding-top: var(--spacing-20);
+  background: white;
+}
+
+.assessment-item:nth-child(even) {
+  border-right: none;
+}
+
+.assessment-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .assessment-item {
+    border-right: none !important;
+  }
+  
+  .assessment-item:nth-last-child(2) {
+    border-bottom: 1px solid var(--color-gray-200) !important;
+  }
+}

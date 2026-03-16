@@ -1,0 +1,191 @@
+.bootcamp-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bootcamp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #000;
+}
+
+.bootcamp-card--full {
+  opacity: 0.7;
+}
+
+.bootcamp-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.bootcamp-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.bootcamp-card:hover .bootcamp-card__image img {
+  transform: scale(1.05);
+}
+
+.bootcamp-card__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.bootcamp-card__badge--online {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.bootcamp-card__badge--offline {
+  background: #d1fae5;
+  color: #166534;
+}
+
+.bootcamp-card__body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bootcamp-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.bootcamp-card__description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.bootcamp-card__details {
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.bootcamp-card__detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.875rem;
+}
+
+.bootcamp-card__detail:last-child {
+  border-bottom: none;
+}
+
+.bootcamp-card__detail-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.bootcamp-card__detail-value {
+  color: #6b7280;
+  text-align: right;
+}
+
+.bootcamp-card__capacity {
+  margin-bottom: 16px;
+}
+
+.bootcamp-card__capacity-bar {
+  width: 100%;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.bootcamp-card__capacity-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #000 0%, #4b5563 100%);
+  transition: width 0.3s ease;
+}
+
+.bootcamp-card--full .bootcamp-card__capacity-fill {
+  background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+}
+
+.bootcamp-card__capacity-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bootcamp-card__full-badge {
+  background: #dc2626;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.625rem;
+  letter-spacing: 0.5px;
+}
+
+.bootcamp-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.bootcamp-card__price {
+  display: flex;
+  flex-direction: column;
+}
+
+.bootcamp-card__price-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bootcamp-card__image {
+    height: 160px;
+  }
+
+  .bootcamp-card__title {
+    font-size: 1.125rem;
+  }
+
+  .bootcamp-card__footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .bootcamp-card__footer button {
+    width: 100%;
+  }
+}

@@ -1,15 +1,16 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import Button from '../../components/common/Button';
-import './Login.css'; // Reusing Login styles
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import Button from "../../components/common/Button";
+import BackButton from "../../components/common/BackButton";
+import "./Login.css"; // Reusing Login styles
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
   const { register } = useAuth(); // Assuming register function exists in auth context
@@ -25,14 +26,14 @@ const Register = () => {
       alert("Passwords don't match");
       return;
     }
-    
+
     setLoading(true);
     try {
       await register(formData.email, formData.password, formData.name);
-      navigate('/dashboard'); // Direct to dashboard or login
+      navigate("/dashboard"); // Direct to dashboard or login
     } catch (error) {
       console.error(error);
-      alert('Registration failed');
+      alert("Registration failed");
     } finally {
       setLoading(false);
     }
@@ -41,16 +42,22 @@ const Register = () => {
   return (
     <div className="auth-page fade-in">
       <div className="container">
+        <BackButton label="Home" />
         <div className="auth-layout">
           <div className="auth-illustration">
-             <div className="illustration-content">
-               <h1>Join NPathways</h1>
-               <p>Create your account to start your global education journey.</p>
-               <img src="https://placehold.co/400x300/00C194/FFFFFF?text=Sign+Up" alt="Register Illustration" />
-             </div>
+            <div className="illustration-content">
+              <h1>Join Zipway</h1>
+              <p>Create your account to start your global education journey.</p>
+              <img
+                src="https://placehold.co/400x300/00C194/FFFFFF?text=Sign+Up"
+                alt="Register Illustration"
+              />
+            </div>
           </div>
           <div className="auth-form-container">
-            <div className="login-card"> {/* Reuse login card style */}
+            <div className="login-card">
+              {" "}
+              {/* Reuse login card style */}
               <h2 className="text-center mb-6">Create Account</h2>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -101,18 +108,20 @@ const Register = () => {
                     className="form-input"
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  fullWidth 
+                <Button
+                  type="submit"
+                  variant="primary"
+                  fullWidth
                   size="medium"
                   disabled={loading}
                 >
-                  {loading ? 'Creating Account...' : 'Sign Up'}
+                  {loading ? "Creating Account..." : "Sign Up"}
                 </Button>
               </form>
               <div className="login-footer">
-                <p>Already have an account? <Link to="/login">Login</Link></p>
+                <p>
+                  Already have an account? <Link to="/login">Login</Link>
+                </p>
               </div>
             </div>
           </div>

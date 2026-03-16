@@ -1,104 +1,186 @@
-import { Link } from 'react-router-dom';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import { consultancyServices, supportServices } from '../../data/services';
-// We also need products for the preview section, let's fix the import
-import { products as digitalProducts } from '../../data/products';
-import './Services.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Button from "../../components/common/Button";
+import { consultancyServices, supportServices } from "../../data/services";
+import "./Services.css";
 
 const Services = () => {
+  // Combine all services for the grid overview
+  const allServices = [
+    {
+      ...consultancyServices[0],
+      image:
+        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition",
+    },
+    {
+      ...consultancyServices[1],
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition",
+    },
+    {
+      ...consultancyServices[2],
+      image:
+        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop",
+      category: "Individual Transition",
+    },
+    {
+      ...supportServices.find((s) => s.id === "for-parents"),
+      image:
+        "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop",
+      category: "Stakeholder Services",
+    },
+    {
+      ...supportServices.find((s) => s.id === "for-schools"),
+      image:
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
+      category: "Stakeholder Services",
+    },
+    {
+      ...supportServices.find((s) => s.id === "career-assessments"),
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools",
+    },
+    {
+      ...supportServices.find((s) => s.id === "bootcamps"),
+      image:
+        "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools",
+    },
+    {
+      ...supportServices.find((s) => s.id === "school-programs"),
+      image:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
+      category: "Readiness Tools",
+    },
+  ];
+
   return (
     <div className="services-page fade-in">
-      {/* Hero */}
-      <section className="section bg-gray services-hero">
-        <div className="container text-center">
-          <h1>Our <span className="text-primary">Services</span></h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Comprehensive support for your global education journey, from initial counseling to post-arrival assistance.
-          </p>
+      {/* Global Banner */}
+      <section className="services-hero">
+        <div className="container">
+          <nav className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <span className="text-black">Our Services</span>
+          </nav>
+          <h1>
+            Our <span className="text-black">Services</span>
+          </h1>
         </div>
       </section>
 
-      {/* Consultancy Services */}
-      <section className="section">
+      {/* Main Services Grid */}
+      <section className="services-grid-section">
         <div className="container">
-          <div className="section-header text-center mb-12">
-            <h2 className="section-title">Consultancy Services</h2>
-            <p className="section-subtitle">Expert human-led guidance for personalized success</p>
+          <div className="section-intro-center">
+            <span className="mini-title">What We Offer</span>
+            <h2 className="main-section-title">
+              Comprehensive support for your global journey
+            </h2>
           </div>
-          
-          <div className="services-list">
-            {consultancyServices.map((service) => (
-              <div key={service.id} className="service-row">
-                <div className="service-icon-large">{service.icon}</div>
-                <div className="service-content">
-                  <h3>{service.name}</h3>
-                  <p className="description">{service.description}</p>
-                  
-                  <div className="features-preview">
-                    <h4>What's Included:</h4>
-                    <div className="features-tags">
-                      {service.features.map((feature, idx) => (
-                        <span key={idx} className="feature-tag">{feature}</span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <Button variant="primary" onClick={() => window.location.href='/contact'}>
-                    Book Consultation
-                  </Button>
+
+          <div className="services-main-grid">
+            {allServices.map((service, index) => (
+              <div key={service.id} className="service-card-premium">
+                <div className="service-card-image-wrap">
+                  <img src={service.image} alt={service.name} />
                 </div>
+                <div className="card-icon-float">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">
+                  {service.category}
+                </span>
+                <h3>{service.name}</h3>
+                <p>
+                  {service.shortDescription ||
+                    service.description.substring(0, 100) + "..."}
+                </p>
+                <Link
+                  to={service.link || "/services"}
+                  className="read-more-btn"
+                >
+                  Read More <span>→</span>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Support Services */}
-      <section className="section bg-gray">
+      {/* Why Choose Us Section */}
+      <section className="why-choose-us">
         <div className="container">
-          <h2 className="text-center mb-12">Student Success Services</h2>
-          <div className="support-grid">
-            {supportServices.map((service) => (
-              <Card key={service.id} className="support-card">
-                <div className="support-icon">{service.icon}</div>
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
-              </Card>
-            ))}
+          <div className="split-layout">
+            <div className="why-content">
+              <span className="mini-title text-gray-400">Why Zipway?</span>
+              <h2 className="text-4xl mb-8 text-white">
+                Why Choose Our Expert Guidance?
+              </h2>
+              <p className="text-gray-400 mb-10 leading-relaxed text-lg">
+                We don't just provide admissions support. We provide a
+                scientific, role-aware strategy that aligns student ambitions
+                with family security and institutional excellence.
+              </p>
+              <div className="why-features">
+                <div className="feature-box-bw">
+                  <h4>Scientific Approach</h4>
+                  <p>Data-driven assessments for path clarity.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>Global Network</h4>
+                  <p>Direct access to top 1% global institutions.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>End-to-End</h4>
+                  <p>From 8th Grade prep to arrival support.</p>
+                </div>
+                <div className="feature-box-bw">
+                  <h4>Trust First</h4>
+                  <p>Verified destinations and student safety.</p>
+                </div>
+              </div>
+            </div>
+            <div className="why-visual">
+              <div className="relative border-4 border-white rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Digital Products Preview */}
-      <section className="section">
+      {/* Final CTA */}
+      <section className="section text-center py-24">
         <div className="container">
-          <div className="section-header text-center mb-12">
-            <h2 className="section-title">Digital Products</h2>
-            <p className="section-subtitle">Automated tools and kits to speed up your process</p>
-          </div>
-          
-          <div className="products-preview-grid">
-            {digitalProducts.slice(0, 3).map((product) => (
-              <Card key={product.id} hoverable className="product-preview-card">
-                <div className="product-image-container">
-                   <img src={`https://placehold.co/400x300/00C194/FFFFFF?text=${product.name.split(' ').join('+')}`} alt={product.name} />
-                </div>
-                <div className="product-info">
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
-                  <Button variant="outline" fullWidth onClick={() => window.location.href='/shop'}>
-                    View in Shop
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Link to="/shop">
-              <Button variant="secondary">View All Digital Products</Button>
-            </Link>
+          <h2 className="text-3xl mb-6">Need a Personalized Strategy?</h2>
+          <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+            Book a discovery session with our expert counselors to find the
+            right path for your unique profile.
+          </p>
+          <div className="cta-buttons">
+            <Button
+              variant="primary"
+              size="large"
+              onClick={() => (window.location.href = "/contact")}
+            >
+              Talk to an Advisor
+            </Button>
+            <Button
+              variant="outline"
+              size="large"
+              onClick={() => (window.location.href = "/services/assessments")}
+            >
+              Explore Tools
+            </Button>
           </div>
         </div>
       </section>

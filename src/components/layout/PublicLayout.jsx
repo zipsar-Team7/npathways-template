@@ -1,12 +1,12 @@
-import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const PublicLayout = () => {
   return (
-    <div className="layout-wrapper">
+    <div className="app">
       <Header />
-      <main className="main-content">
+      <main style={{ paddingTop: "100px", minHeight: "100vh" }}>
         <Outlet />
       </main>
       <Footer />

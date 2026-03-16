@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+/* Main Layout - Account for Fixed Header */
+main {
+  min-height: 100vh;
+  padding-top: 100px; /* Space for Dynamic Island header */
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 80px; /* Smaller spacing on mobile */
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

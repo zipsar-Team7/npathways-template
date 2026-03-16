@@ -1,0 +1,242 @@
+{
+  "bootcamps": [
+    {
+      "id": "gcb-online-jan-2026",
+      "name": "Global Career Blueprint",
+      "type": "online",
+      "description": "Intensive 4-week accelerator designed to build a solid profile for international admissions.",
+      "startDate": "2026-01-20",
+      "endDate": "2026-02-17",
+      "time": "18:00 - 20:00 IST",
+      "duration": "4 Weeks",
+      "mode": "Live Online Sessions",
+      "price": 14999,
+      "currency": "INR",
+      "capacity": 30,
+      "enrolled": 18,
+      "instructor": "Dr. Priya Sharma",
+      "platform": "Zoom",
+      "features": [
+        "Profile building strategy",
+        "Extracurricular optimization",
+        "Academic goal setting",
+        "Global university landscape overview"
+      ],
+      "prerequisites": "Students in Grade 10-12",
+      "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "gcb-offline-mumbai-jan-2026",
+      "name": "Global Career Blueprint - Mumbai",
+      "type": "offline",
+      "description": "Intensive 4-week accelerator with in-person mentorship and networking opportunities.",
+      "startDate": "2026-01-25",
+      "endDate": "2026-02-22",
+      "time": "10:00 - 13:00 IST",
+      "duration": "4 Weeks",
+      "mode": "In-Person Workshop",
+      "price": 19999,
+      "currency": "INR",
+      "capacity": 20,
+      "enrolled": 12,
+      "instructor": "Mr. Rahul Desai",
+      "location": {
+        "venue": "TechHub Mumbai",
+        "address": "Bandra Kurla Complex, Mumbai, Maharashtra 400051",
+        "city": "Mumbai",
+        "coordinates": {
+          "lat": 19.0596,
+          "lng": 72.8295
+        }
+      },
+      "features": [
+        "Profile building strategy",
+        "Extracurricular optimization",
+        "Academic goal setting",
+        "Global university landscape overview",
+        "In-person networking",
+        "Alumni meetups"
+      ],
+      "prerequisites": "Students in Grade 10-12",
+      "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "essay-writing-online-feb-2026",
+      "name": "Essay Writing Masterclass",
+      "type": "online",
+      "description": "Master the art of compelling personal statements and college essays.",
+      "startDate": "2026-02-05",
+      "endDate": "2026-02-26",
+      "time": "19:00 - 21:00 IST",
+      "duration": "3 Weeks",
+      "mode": "Live Online Sessions",
+      "price": 9999,
+      "currency": "INR",
+      "capacity": 40,
+      "enrolled": 25,
+      "instructor": "Ms. Ananya Kumar",
+      "platform": "Google Meet",
+      "features": [
+        "Personal narrative development",
+        "Essay structure and flow",
+        "Editing and refinement techniques",
+        "Sample review sessions"
+      ],
+      "prerequisites": "Students planning to apply abroad",
+      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop"
+    },
+    {
+      "id": "gcb-offline-bangalore-feb-2026",
+      "name": "Global Career Blueprint - Bangalore",
+      "type": "offline",
+      "description": "Intensive 4-week accelerator with in-person mentorship and networking opportunities.",
+      "startDate": "2026-02-10",
+      "endDate": "2026-03-10",
+      "time": "14:00 - 17:00 IST",
+      "duration": "4 Weeks",
+      "mode": "In-Person Workshop",
+      "price": 19999,
+      "currency": "INR",
+      "capacity": 25,
+      "enrolled": 15,
+      "instructor": "Dr. Suresh Patel",
+      "location": {
+        "venue": "Innovation Hub Bangalore",
+        "address": "Koramangala, Bangalore, Karnataka 560034",
+        "city": "Bangalore",
+        "coordinates": {
+          "lat": 12.9352,
+          "lng": 77.6245
+        }
+      },
+      "features": [
+        "Profile building strategy",
+        "Extracurricular optimization",
+        "Academic goal setting",
+        "Global university landscape overview",
+        "In-person networking",
+        "Industry expert sessions"
+      ],
+      "prerequisites": "Students in Grade 10-12",
+      "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "sat-prep-online-feb-2026",
+      "name": "SAT Preparation Intensive",
+      "type": "online",
+      "description": "Comprehensive SAT prep focusing on test-taking strategies and score optimization.",
+      "startDate": "2026-02-15",
+      "endDate": "2026-03-15",
+      "time": "16:00 - 18:00 IST",
+      "duration": "4 Weeks",
+      "mode": "Live Online Sessions",
+      "price": 12999,
+      "currency": "INR",
+      "capacity": 35,
+      "enrolled": 28,
+      "instructor": "Mr. Vikram Singh",
+      "platform": "Zoom",
+      "features": [
+        "Full-length practice tests",
+        "Section-wise strategies",
+        "Time management techniques",
+        "Score improvement tracking"
+      ],
+      "prerequisites": "Students planning to take SAT",
+      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "leadership-offline-delhi-mar-2026",
+      "name": "Leadership Development Workshop - Delhi",
+      "type": "offline",
+      "description": "Build leadership skills through hands-on activities and real-world projects.",
+      "startDate": "2026-03-05",
+      "endDate": "2026-03-26",
+      "time": "15:00 - 18:00 IST",
+      "duration": "3 Weeks",
+      "mode": "In-Person Workshop",
+      "price": 16999,
+      "currency": "INR",
+      "capacity": 20,
+      "enrolled": 8,
+      "instructor": "Ms. Neha Gupta",
+      "location": {
+        "venue": "Leadership Center Delhi",
+        "address": "Connaught Place, New Delhi, Delhi 110001",
+        "city": "Delhi",
+        "coordinates": {
+          "lat": 28.6304,
+          "lng": 77.2177
+        }
+      },
+      "features": [
+        "Team building exercises",
+        "Public speaking practice",
+        "Project management basics",
+        "Leadership style assessment",
+        "Mentorship from industry leaders"
+      ],
+      "prerequisites": "Students in Grade 9-12",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "coding-online-mar-2026",
+      "name": "Competitive Coding Bootcamp",
+      "type": "online",
+      "description": "Master algorithms and data structures for competitive programming.",
+      "startDate": "2026-03-15",
+      "endDate": "2026-04-12",
+      "time": "17:00 - 19:00 IST",
+      "duration": "4 Weeks",
+      "mode": "Live Online Sessions",
+      "price": 11999,
+      "currency": "INR",
+      "capacity": 50,
+      "enrolled": 35,
+      "instructor": "Mr. Arjun Reddy",
+      "platform": "Zoom",
+      "features": [
+        "Algorithm fundamentals",
+        "Data structure implementation",
+        "Problem-solving techniques",
+        "Mock contests"
+      ],
+      "prerequisites": "Basic programming knowledge",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "interview-offline-pune-mar-2026",
+      "name": "University Interview Prep - Pune",
+      "type": "offline",
+      "description": "Mock interviews and personalized feedback for university admissions.",
+      "startDate": "2026-03-20",
+      "endDate": "2026-04-10",
+      "time": "10:00 - 13:00 IST",
+      "duration": "3 Weeks",
+      "mode": "In-Person Workshop",
+      "price": 15999,
+      "currency": "INR",
+      "capacity": 15,
+      "enrolled": 10,
+      "instructor": "Dr. Meera Joshi",
+      "location": {
+        "venue": "Career Hub Pune",
+        "address": "Koregaon Park, Pune, Maharashtra 411001",
+        "city": "Pune",
+        "coordinates": {
+          "lat": 18.5362,
+          "lng": 73.8988
+        }
+      },
+      "features": [
+        "Mock interview sessions",
+        "Video feedback analysis",
+        "Common questions preparation",
+        "Body language coaching",
+        "Confidence building exercises"
+      ],
+      "prerequisites": "Students applying to universities",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070&auto=format&fit=crop"
+    }
+  ]
+}

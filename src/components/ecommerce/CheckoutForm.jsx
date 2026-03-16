@@ -174,11 +174,11 @@ const CheckoutForm = () => {
         size="large"
         disabled={!formData.termsAccepted || !formData.refundPolicyAccepted}
       >
-        Pay {formatCurrency(getCartTotal())}
+        Pay {formatCurrency(getCartTotal() * 1.18)}
       </Button>
       
       <div className="secure-badge">
-        🔒 SSL Secured Payment
+        [Secure] SSL Secured Payment
       </div>
     </form>
   );

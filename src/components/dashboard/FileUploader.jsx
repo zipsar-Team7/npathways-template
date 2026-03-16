@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
-import Button from '../common/Button';
-import './FileUploader.css';
+import { useState, useRef } from "react";
+import Button from "../common/Button";
+import "./FileUploader.css";
 
 const FileUploader = ({ onUpload }) => {
   const [dragActive, setDragActive] = useState(false);
@@ -44,24 +44,24 @@ const FileUploader = ({ onUpload }) => {
 
   return (
     <div className="file-uploader-container">
-      <form 
-        className={`file-upload-form ${dragActive ? "drag-active" : ""}`} 
-        onDragEnter={handleDrag} 
-        onDragLeave={handleDrag} 
-        onDragOver={handleDrag} 
+      <form
+        className={`file-upload-form ${dragActive ? "drag-active" : ""}`}
+        onDragEnter={handleDrag}
+        onDragLeave={handleDrag}
+        onDragOver={handleDrag}
         onDrop={handleDrop}
       >
-        <input 
-          ref={inputRef} 
-          type="file" 
-          id="file-upload" 
-          multiple={true} 
-          onChange={handleChange} 
-          style={{ display: 'none' }} 
+        <input
+          ref={inputRef}
+          type="file"
+          id="file-upload"
+          multiple={true}
+          onChange={handleChange}
+          style={{ display: "none" }}
         />
-        
+
         <div className="upload-prompt">
-          <div className="upload-icon">☁️</div>
+          <div className="upload-icon">Upload</div>
           <p>Drag and drop your files here or</p>
           <Button variant="outline" onClick={onButtonClick} type="button">
             Browse Files

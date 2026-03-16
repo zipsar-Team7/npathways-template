@@ -1,4 +1,4 @@
-/* File Uploader Styles */
+/* File Uploader Styles - Dark Theme */
 
 .file-uploader-container {
   margin-bottom: var(--spacing-8);
@@ -10,33 +10,44 @@
   max-width: 100%;
   text-align: center;
   position: relative;
-  background-color: var(--color-gray-50);
-  border: 2px dashed var(--color-gray-300);
-  border-radius: var(--radius-lg);
+  background: rgba(10, 30, 63, 0.4);
+  border: 2px dashed rgba(191, 255, 153, 0.3);
+  border-radius: var(--radius-2xl);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.file-upload-form:hover {
+  background: rgba(10, 30, 63, 0.6);
+  border-color: rgba(191, 255, 153, 0.5);
 }
 
 .file-upload-form.drag-active {
-  background-color: #E6FFFA;
-  border-color: var(--color-primary);
+  background: rgba(191, 255, 153, 0.1);
+  border-color: var(--color-brand-primary);
+  box-shadow: 
+    0 0 0 4px rgba(191, 255, 153, 0.1),
+    0 8px 24px rgba(191, 255, 153, 0.2);
 }
 
 .upload-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-4);
-  color: var(--color-primary);
+  color: var(--color-brand-primary);
 }
 
 .upload-prompt p {
   margin-bottom: var(--spacing-4);
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
 }
 
 .upload-hint {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
+  color: var(--color-text-secondary);
   margin-top: var(--spacing-4) !important;
+  opacity: 0.7;
 }
