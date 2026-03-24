@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <span className="footer-logo-text">Zipway</span>
+              <span className="footer-logo-text">NPathways</span>
               <span className="footer-logo-subtitle">Global</span>
             </Link>
             <p className="footer-description">
@@ -145,7 +145,7 @@ const Footer = () => {
             <h4>Get in Touch</h4>
             <ul className="footer-links">
               <li>
-                <a href="mailto:info@zipway.global">info@zipway.global</a>
+                <a href="mailto:info@npathways.global">info@npathways.global</a>
               </li>
               <li>
                 <a href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a>
@@ -158,7 +158,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} Zipway Global. All rights reserved.
+            © {new Date().getFullYear()} NPathways Global. All rights reserved.
             Operated by <strong>Skillinum Falcon LLP</strong>.
           </p>
           <ul className="footer-legal">

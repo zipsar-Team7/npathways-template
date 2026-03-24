@@ -63,9 +63,9 @@ const Contact = () => {
                 <div className="info-icon">@</div>
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@zipway.global</p>
+                  <p>info@npathways.global</p>
                   <p className="text-sm text-gray-500">
-                    For support: support@zipway.global
+                    For support: support@npathways.global
                   </p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-// Services data for Zipway Global
+// Services data for NPathways Global
 
 export const serviceCategories = [
   {
@@ -162,7 +162,7 @@ export const supportServices = [
     ],
     faq: [
       { question: 'Are bootcamps online or offline?', answer: 'We offer both hybrid and fully online bootcamps to suit global schedules.' },
-      { question: 'Will I get a certificate?', answer: 'Yes, all successful graduates receive a globally recognized Zipway certificate.' }
+      { question: 'Will I get a certificate?', answer: 'Yes, all successful graduates receive a globally recognized NPathways certificate.' }
     ],
     link: '/services/bootcamps'
   },
@@ -172,7 +172,7 @@ export const supportServices = [
     icon: null,
     shortDescription: 'Structured institutional engagements.',
     description: 'Long-term programs integrated with the school calendar for holistic student development.',
-    longDescription: 'Zipway school programs are designed to be part of the academic ecosystem. We provide year-long guidance and activities that transform students from passive learners to global leaders.',
+    longDescription: 'NPathways school programs are designed to be part of the academic ecosystem. We provide year-long guidance and activities that transform students from passive learners to global leaders.',
     features: [
       'Quarterly readiness audits',
       'Guest lectures from global alumni',

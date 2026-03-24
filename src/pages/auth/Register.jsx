@@ -46,7 +46,7 @@ const Register = () => {
         <div className="auth-layout">
           <div className="auth-illustration">
             <div className="illustration-content">
-              <h1>Join Zipway</h1>
+              <h1>Join NPathways</h1>
               <p>Create your account to start your global education journey.</p>
               <img
                 src="https://placehold.co/400x300/00C194/FFFFFF?text=Sign+Up"

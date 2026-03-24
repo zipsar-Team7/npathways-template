@@ -117,7 +117,7 @@ const Services = () => {
         <div className="container">
           <div className="split-layout">
             <div className="why-content">
-              <span className="mini-title text-gray-400">Why Zipway?</span>
+              <span className="mini-title text-gray-400">Why NPathways?</span>
               <h2 className="text-4xl mb-8 text-white">
                 Why Choose Our Expert Guidance?
               </h2>

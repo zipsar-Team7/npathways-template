@@ -10,7 +10,7 @@ const Privacy = () => {
         <div className="legal-content">
           <section>
             <h2>1. Introduction</h2>
-            <p>Zipway Global ("us", "we", or "our") operates the zipway.world website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+            <p>NPathways Global ("us", "we", or "our") operates the npathways.world website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
           </section>
 
           <section>
@@ -25,7 +25,7 @@ const Privacy = () => {
 
           <section>
             <h2>3. Use of Data</h2>
-            <p>Zipway Global uses the collected data for various purposes:</p>
+            <p>NPathways Global uses the collected data for various purposes:</p>
             <ul>
               <li>To provide and maintain the Service</li>
               <li>To notify you about changes to our Service</li>

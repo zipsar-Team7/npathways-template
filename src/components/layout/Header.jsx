@@ -48,7 +48,7 @@ const Header = () => {
           <div className="header-content">
             {/* Logo */}
             <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-              <span className="logo-text">Zipway</span>
+              <span className="logo-text">NPathways</span>
               <span className="logo-subtitle">Global</span>
             </Link>
             {/* Desktop Navigation */}

@@ -58,7 +58,7 @@ const Founder = () => {
                     transform: "rotate(-2deg)",
                   }}
                 >
-                  Rajiv
+                  Deepak
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Founder = () => {
                 <p style={{ marginBottom: "1.5rem" }}>
                   With over 15 years of experience in international education
                   and career counseling,
-                  <strong> Rajiv</strong> founded Zipway with a single
+                  <strong> Deepak</strong> founded NPathways with a single
                   mission: to provide honest, transparent, and student-first
                   guidance in an industry often fueled by numbers.
                 </p>
@@ -92,7 +92,7 @@ const Founder = () => {
                   grit to work for it.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  Under his leadership, Zipway has evolved from a small
+                  Under his leadership, NPathways has evolved from a small
                   counseling center into a complete ecosystem that handles
                   everything from psychometric testing to post-arrival support
                   across 15+ countries.
@@ -115,10 +115,10 @@ const Founder = () => {
                     }}
                   />
                   <p style={{ margin: 0, fontWeight: "bold", color: "#000" }}>
-                    Rajiv
+                    Deepak
                   </p>
                   <p style={{ margin: 0, fontSize: "0.9rem" }}>
-                    Founder, Zipway Global
+                    Founder, NPathways Global
                   </p>
                 </div>
               </div>
@@ -179,8 +179,8 @@ const Founder = () => {
               },
               {
                 year: "2020",
-                title: "Zipway Era",
-                desc: "Unified all services under the Zipway brand for a holistic student journey.",
+                title: "NPathways Era",
+                desc: "Unified all services under the NPathways brand for a holistic student journey.",
               },
             ].map((item, i) => (
               <div

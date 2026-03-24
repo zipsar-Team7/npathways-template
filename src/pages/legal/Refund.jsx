@@ -38,7 +38,7 @@ const Refund = () => {
 
           <section>
             <h2>4. Contact Us</h2>
-            <p>If you have any questions about our Returns and Refunds Policy, please contact us at billing@zipway.global.</p>
+            <p>If you have any questions about our Returns and Refunds Policy, please contact us at billing@npathways.global.</p>
           </section>
         </div>
       </div>

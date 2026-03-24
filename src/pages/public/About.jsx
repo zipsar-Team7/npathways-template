@@ -9,7 +9,7 @@ const About = () => {
 
   const leadership = [
     {
-      name: "Rajiv",
+      name: "Deepak",
       role: "Founder & CEO",
       img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
       link: "/about/founder",
@@ -81,7 +81,7 @@ const About = () => {
                   marginBottom: "2rem",
                 }}
               >
-                Zipway is a premium study abroad consultancy operated by
+                NPathways is a premium study abroad consultancy operated by
                 Skillinum Falcon LLP. We provide end-to-end support for students
                 aiming for world-class universities, blending scientific
                 assessments with human-centric mentorship.

@@ -194,7 +194,7 @@ const HowItWorks = () => {
                 style={{ color: "#aaa", fontSize: "1.2rem", lineHeight: "1.8" }}
               >
                 Most consultants stop after the visa sticker is on your
-                passport. At Zipway, that's only step 7. We believe our true
+                passport. At NPathways, that's only step 7. We believe our true
                 value is proven when you successfully integrate into your new
                 life and career.
               </p>

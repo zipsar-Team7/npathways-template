@@ -1,4 +1,4 @@
-// Product catalog data for Zipway Global
+// Product catalog data for NPathways Global
 export const products = [
   // ASSESSMENTS
   {

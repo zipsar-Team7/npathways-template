@@ -19,7 +19,7 @@ const LoadingScreen = () => {
     <div className="loading-screen">
       <div className="loading-content">
         <div className="loading-logo">
-          <span className="logo-text">Zipway</span>
+          <span className="logo-text">NPathways</span>
           <span className="logo-sub">Global</span>
         </div>
         <div className="loading-spinner"></div>

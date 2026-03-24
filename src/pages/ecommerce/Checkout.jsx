@@ -65,7 +65,7 @@ const Checkout = () => {
               </div>
 
               <div className="summary-footer">
-                <p>Zipway Global (Skillinum Falcon LLP)</p>
+                <p>NPathways Global (Skillinum Falcon LLP)</p>
               </div>
             </div>
           </div>

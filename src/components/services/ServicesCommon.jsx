@@ -13,7 +13,7 @@ export const CommonDataSection = () => (
         <div className="philosophy-content">
           <h2 className="mb-6">Our Philosophy</h2>
           <p className="text-lg text-gray-700 mb-6">
-            At Zipway Global, we believe that education is not just about admission; it's about 
+            At NPathways Global, we believe that education is not just about admission; it's about 
             <strong> alignment</strong>. We focus on readiness across three dimensions: Clarity, 
             Capability, and Global Exposure.
           </p>
@@ -69,7 +69,7 @@ export const CatalogueItem = ({ category, items }) => (
  */
 export const ReadinessFramework = () => (
   <div className="readiness-framework bg-black text-white p-12 rounded-3xl">
-    <h2 className="text-center mb-12">The Zipway Readiness Framework</h2>
+    <h2 className="text-center mb-12">The NPathways Readiness Framework</h2>
     <div className="grid grid-3 gap-8">
       <div className="framework-pillar">
         <div className="pillar-index">01</div>

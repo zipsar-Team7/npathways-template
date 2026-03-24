@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       <div className={`sidebar-overlay ${isOpen ? 'show' : ''}`} onClick={onClose}></div>
       <aside className={`dashboard-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <div className="sidebar-logo">Zipway</div>
+          <div className="sidebar-logo">NPathways</div>
           <button className="close-sidebar-btn" onClick={onClose}>✕</button>
         </div>
         
